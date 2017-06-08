@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Login | SVCU</title>
@@ -31,7 +31,7 @@
 				</div>
 
 				<a class="btn btn-primary btn-large btn-block" href="#" onclick ="toggleSignIn()">Login</a>
-				<a class="login-link" href="#">Lost your password?</a>
+				<a class="login-link">Lost your password?</a>
 			</div>
 		</div>
 	</div>
@@ -74,7 +74,9 @@ function toggleSignIn() {
         });
         // [END authwithemail]
       }
+      window.location = "page.html";
       document.getElementById('quickstart-sign-in').disabled = true;
+
     }
 
 function initApp() {
@@ -119,6 +121,7 @@ function initApp() {
       document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
       document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
     }
+
     window.onload = function() {
       initApp();
     };

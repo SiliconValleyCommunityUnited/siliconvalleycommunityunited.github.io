@@ -40,7 +40,9 @@
 				<label class="login-field-icon fui-lock" for="login-pass"></label>
 				</div>
 
-				<a class="btn btn-primary btn-large btn-block" href="#" onclick ="handleSignUp()">Register</a>
+				<a class="btn btn-primary btn-large btn-block" onclick ="handleSignUp()">Register</a>
+
+
 			</div>
 		</div>
 	</div>
@@ -49,14 +51,15 @@
 <script type="text/javascript">
 
 function handleSignUp() {
+      var bool = true;
       var email = document.getElementById('login-email').value;
       var password = document.getElementById('login-pass').value;
-      if (email.length < 4) {
+      if (email.length < 4 ) {
         alert('Please enter an email address.');
         return;
       }
       if (password.length < 4) {
-        alert('Please enter a password.');
+        alert('Please enter a password more than 4 length.');
         return;
       }
       // Sign in with email and pass.
@@ -68,12 +71,25 @@ function handleSignUp() {
         // [START_EXCLUDE]
         if (errorCode == 'auth/weak-password') {
           alert('The password is too weak.');
+          bool = false;
         } else {
           alert(errorMessage);
         }
         console.log(error);
         // [END_EXCLUDE]
-      });
+      }).then(function () {
+        var user = firebase.auth().currentUser;
+        if(user != null){
+            //updateUserInfo([user.uid, name, email, 1], function(){
+              if (bool)
+                goToDashboard();
+            //})
+        }
+    });
+
+      //window.location.href = "registered.html";
+      //console.log("hi")
+      //href = "registered.html"
       // [END createwithemail]
     }
 
@@ -119,10 +135,15 @@ function initApp() {
       document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
       document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
       document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
+
+      
     }
     window.onload = function() {
       initApp();
     };
+function goToDashboard(){
+    window.location.href = "registered.html";
+}    
   </script>
 
   <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
