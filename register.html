@@ -52,6 +52,7 @@
 
 function handleSignUp() {
       var bool = true;
+      var name = document.getElementById('login-fname').value;
       var email = document.getElementById('login-email').value;
       var password = document.getElementById('login-pass').value;
       if (email.length < 4 ) {
@@ -79,11 +80,21 @@ function handleSignUp() {
         // [END_EXCLUDE]
       }).then(function () {
         var user = firebase.auth().currentUser;
-        if(user != null){
+        if(user != null && bool){
             //updateUserInfo([user.uid, name, email, 1], function(){
-              if (bool)
-                goToDashboard();
+                user.updateProfile({
+                  displayName: name
+                }).then(function(){
+                    firebase.database().ref('users/' + user.uid).set({
+                        Age: 10
+                      }).then(function(){
+                          goToDashboard();
+                      })
+                    
+
+                })
             //})
+            
         }
     });
 
@@ -142,7 +153,8 @@ function initApp() {
       initApp();
     };
 function goToDashboard(){
-    window.location.href = "registered.html";
+    console.log("Go to Dashboard");
+    window.location.href = "dashboard.html";
 }    
   </script>
 
