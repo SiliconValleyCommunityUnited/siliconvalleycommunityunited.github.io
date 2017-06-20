@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   display: table;
   width: 100%;
-  height: 100vh;
+  height: calc((100vh - 90px) - 5vh);
   background: url(../img/hero-bg.jpg) top center fixed;
   background-size: cover;
 }
@@ -102,9 +102,9 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(0, 0, 0, 0.8);
   display: table-cell;
   margin: 0;
-  padding: 0;
+  padding: 7.2% 0 0 0;
   text-align: center;
-  vertical-align: middle;
+  
 }
 
 #hero h1 {
@@ -184,6 +184,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #111;
   padding: 20px 0;
   height: 90px;
+	
 }
 
 #header #logo {
@@ -223,9 +224,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.is-sticky #header {
+/*.is-sticky #header {
   background: rgba(0, 0, 0, 0.85);
-}
+}*/
 
 /*--------------------------------------------------------------
 # Navigation Menu
