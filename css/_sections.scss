@@ -55,6 +55,36 @@
 
 }
 
+/* Event Section
+--------------------------------*/
+#event {
+  background: #fff;
+  padding: 80px 0;
+  
+  .event-container {
+    background: url(../img/event-img.jpg) left top no-repeat;
+  }
+  
+  .event-content {
+    background: #fff;
+  }
+  
+  .event-title {
+    color: #333;
+    font-weight: 700;
+    font-size: 28px;
+  }
+
+  .event-text {
+    line-height: 26px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+}
+
 /* Services Section
 --------------------------------*/
 #services {
