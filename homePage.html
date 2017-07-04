@@ -1,0 +1,158 @@
+<!--
+to do
+1.  make the nav bar always be at the top of the page
+2.  make the space between "Silicon Valley Community United" and "This is our sl
+gan" smaller
+3.  make the transition of the down button smooth
+4.  make the images square
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href = "style.css" rel = "stylesheet">
+    <link href = "lib/bootstrap/css/bootstrap.min.css" rel = "stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+    <title>Welcome to SVCU</title>
+</head>
+
+<body style = "margin: 0">
+    <div class = "nav-bar">
+        <a href = "#first">
+            <h2>Sign in</h2>
+        </a>
+
+        <a href = "#first">
+            <h2>Events</h2>
+        </a>
+
+        <a href = "#first">
+            <h2>About Us</h2>
+        </a>
+
+        <a href = "#first">
+            <h2>Home</h2>
+        </a>
+    </div>
+
+    <section id = "first">
+        <div class = "title">
+            <h1>Silicon Valley Community United</h1>
+        </div>
+
+        <div class = "slogan">
+            <h2>This is our slogan</h2>
+        </div>
+
+        <div class = "actions">
+            <a href = "#who-we-are" class = "btn-get-started">v</a>
+        </div>
+    </section>
+
+    <section id = "who-we-are">
+        <br><br>
+
+        <div class = "title">
+            <h1>Who We Are</h1>
+        </div>
+
+        <div class = "paragraph">
+            <h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vo
+                lutpat turpis sed turpis fermentum dictum. Nulla turpis felis,
+                ultricies et efficitur vel, venenatis sed magna. Sed vitae fauc
+                ibus massa. Quisque condimentum scelerisque rhoncus. Mauris sed
+                est pulvinar, elementum neque at, venenatis eros. Ut nec aliqu
+                am magna. Vestibulum in convallis quam. Maecenas sem quam, frin
+                gilla placerat nulla elementum, dignissim blandit diam. Vivamus
+                ut arcu arcu. Nam neque metus, iaculis sit amet odio a, condim
+                entum ultricies odio. Proin tempus dui a tellus blandit, in fac
+                ilisis leo auctor. Pellentesque leo arcu, lacinia et consequat
+                in, auctor nec tortor.
+            </h2>
+
+            <br><br><br>
+        </div>
+    </section>
+
+    <section id = "what-we-do">
+        <div class = "title">
+            <h1>What We Do</h1>
+        </div>
+
+        <table style = "width:100%">
+            <tr>
+                <td style = "width: 50%">
+                    <img class = "square-image" src = "secondImage.jpg">
+                </td>
+
+                <td style = "width: 50%">
+                    <div class = "paragraph-left">
+                        <h2>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vo
+                            lutpat turpis sed turpis fermentum dictum. Nulla turpis felis,
+                            ultricies et efficitur vel, venenatis sed magna. Sed vitae fauc
+                            ibus massa. Quisque condimentum scelerisque rhoncus. Mauris sed
+                            est pulvinar, elementum neque at, venenatis eros. Ut nec aliqu
+                            am magna. Vestibulum in convallis quam. Maecenas sem quam, frin
+                            gilla placerat nulla elementum, dignissim blandit diam. Vivamus
+                            ut arcu arcu. Nam neque metus, iaculis sit amet odio a, condim
+                            entum ultricies odio. Proin tempus dui a tellus blandit, in fac
+                            ilisis leo auctor. Pellentesque leo arcu, lacinia et consequat
+                            in, auctor nec tortor. Pellentesque leo arcu, lacinia et consequat
+                            in, auctor nec tortor. Pellentesque leo arcu, lacinia et consequat
+                            in, auctor nec tortor.
+                        </h2>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table style = "width:100%">
+            <tr>
+                <td style = "width: 50%">
+                    <div class = "paragraph-right">
+                        <h2>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vo
+                            lutpat turpis sed turpis fermentum dictum. Nulla turpis felis,
+                            ultricies et efficitur vel, venenatis sed magna. Sed vitae fauc
+                            ibus massa. Quisque condimentum scelerisque rhoncus. Mauris sed
+                            est pulvinar, elementum neque at, venenatis eros. Ut nec aliqu
+                            am magna. Vestibulum in convallis quam. Maecenas sem quam, frin
+                            gilla placerat nulla elementum, dignissim blandit diam. Vivamus
+                            ut arcu arcu. Nam neque metus, iaculis sit amet odio a, condim
+                            entum ultricies odio. Proin tempus dui a tellus blandit, in fac
+                            ilisis leo auctor. Pellentesque leo arcu, lacinia et consequat
+                            in, auctor nec tortor. Pellentesque leo arcu, lacinia et consequat
+                            in, auctor nec tortor. Pellentesque leo arcu, lacinia et consequat
+                            in, auctor nec tortor.
+                        </h2>
+                    </div>
+                </td>
+
+                <td style = "width: 50%">
+                    <img class = "square-image" src = "thirdImage.jpg">
+                </td>
+            </tr>
+        </table>
+    </section>
+</body>
+</html>
