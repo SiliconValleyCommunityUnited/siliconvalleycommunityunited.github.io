@@ -1,7 +1,11 @@
+/* h1 and h2 */
+
 h1, h2 {
     font-family: "Futura";
     font-weight: 300;
 }
+
+/* nav bar */
 
 .nav-bar {
     background-color: black;
@@ -23,6 +27,8 @@ h1, h2 {
 .nav-bar a:hover {
     color: #03C4EB;
 }
+
+/* first */
 
 #first {
     display: table;
@@ -70,6 +76,8 @@ h1, h2 {
     text-decoration: none;
 }
 
+/* who we are */
+
 #who-we-are {
     display: table;
     width: 100%;
@@ -84,8 +92,10 @@ h1, h2 {
 
 #who-we-are .paragraph {
     font-size: 27px;
-    margin: 0 300px 0 300px;
+    margin: 0 300px;
 }
+
+/* what we do */
 
 #what-we-do {
     display: table;
@@ -119,4 +129,40 @@ h1, h2 {
     overflow: hidden;
     width: 49.35vw;
     height: 49.35vw;
+}
+
+/* about us */
+
+#about-us {
+    display: table;
+    width: 100%;
+    height: calc(100vh);
+    background-color: #BEE4E0;
+    color: white;
+}
+
+#about-us .title {
+    font-size: 48px;
+    text-align: center;
+    color: black;
+}
+
+#about-us .paragraph {
+    color: black;
+    text-align: center;
+    font-size: 19px;
+    margin: -25px 200px;
+}
+
+#about-us .contact-title {
+    font-size: 38px;
+    text-align: center;
+    color: black;
+}
+
+#about-us .contact-paragraph {
+    color: black;
+    text-align: center;
+    font-size: 28px;
+    margin: -25px 150px;
 }
