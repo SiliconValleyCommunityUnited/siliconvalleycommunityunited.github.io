@@ -873,9 +873,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 .login-form {
 text-align: center;
+max-width: 350px;
 font-family: Arial;
 /*background-color: #3498DB;*/
-padding: 150px;
+padding: 20px;
 }
 .control-group {
 margin-bottom: 10px;
@@ -888,7 +889,7 @@ border-radius: 3px;
 font-size: 16px;
 font-weight: 200;
 padding: 10px 0;
-width: 250px;
+width: 300px;
 transition: border .5s;
 }
 
