@@ -863,3 +863,31 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 13px;
   color: #ccc;
 }
+
+/*-----------
+good stuff
+----------*/
+
+#kms {
+    margin-top: 30px;
+}
+#kmsing {
+    width: 45vw;
+}
+#kmswrite {
+    width: 50vw;
+}
+
+#about .upcoming-container {
+  background: url("http://coolwildlife.com/wp-content/uploads/galleries/post-3004/Fox%20Picture%20003.jpg") left top no-repeat;
+  background-size:44vw;
+  height:44vh;
+  margin-bottom: 20px;
+}
+
+#about .upcoming2-container {
+  background: url("http://coolwildlife.com/wp-content/uploads/galleries/post-3004/Fox%20Picture%20003.jpg") right top no-repeat;
+  background-size:44vw;
+  height:44vh;
+  margin-bottom: 20px;
+}
