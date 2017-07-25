@@ -1,0 +1,71 @@
+/* about us */
+
+#our-story {
+    display: table;
+    width: 100%;
+    height: calc(100vh);
+    background-color: #BEE4E0;
+    color: black;
+    text-align: center;
+}
+
+#our-story .title {
+    font-size: 8vh;
+    margin-top: 3vh;
+}
+
+#our-story .paragraph {
+    font-size: 4vh;
+    margin: 0 20vh;
+    margin-top: 5vh;
+}
+
+#contact-us {
+    display: table;
+    width: 100%;
+    height: calc(100vh);
+    background-color: #59667A;
+    color: white;
+    text-align: center;
+}
+
+#contact-us .title {
+    font-size: 8vh;
+    margin-top: 3vh;
+}
+
+#contact-us .paragraph {
+    font-size: 4vh;
+    margin: 0 20vh;
+    margin-top: 5vh;
+}
+
+#subscribe {
+    display: table;
+    width: 100%;
+    height: calc(100vh);
+    background-color: #BFD4DD;
+    color: black;
+    text-align: center;
+}
+
+#subscribe .title {
+    font-size: 9vh;
+    margin-top: 3vh;
+}
+
+#subscribe .paragraph {
+    font-size: 4.5vh;
+    margin-top: 5vh;
+}
+
+#subscribe .textbox {
+    margin-top: -5vh;
+    font-size: 4vh;
+    font-family: "Futura";
+}
+
+#subscribe .done {
+    margin-top: 3vh;
+    font-size: 4vh;
+}
