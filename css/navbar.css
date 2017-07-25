@@ -1,8 +1,29 @@
-/* h1 and h2 */
-
 h1, h2, p {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-weight: 300;
+}
+
+/* nav bar */
+
+.nav-bar {
+    background-color: black;
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    right: 0px;
+}
+
+.nav-bar a {
+    float: right;
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 0px 30px;
+}
+
+.nav-bar a:hover {
+    color: #03C4EB;
 }
 
 /* Nav Menu Essentials */
