@@ -1,15 +1,10 @@
 /* p */
 
-p {
-    font-family: "Futura";
+h1, h2, p {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-weight: 300;
 }
 
-/* h2 */
-
-h2 {
-
-}
 
 /* nav bar */
 
@@ -32,40 +27,6 @@ h2 {
 
 .nav-bar a:hover {
     color: #03C4EB;
-}
-
-/* past events */
-
-#past-events {
-    display: table;
-    width: 100%;
-    height: calc(100vh);
-    background-color: #425661;
-    color: white;
-    padding-top: 5vh;
-}
-
-#past-events .title {
-    font-size: 7vw;
-    text-align: center;
-    margin: 1vw 0;
-}
-
-#past-events .label {
-    font-size: 4vw;
-    font-weight: normal;
-}
-
-#past-events .paragraph-left {
-    font-size: 1.76vw;
-    margin: 0.5vw 3vw;
-    text-align: left;
-}
-
-#past-events .paragraph-right {
-    font-size: 1.76vw;
-    margin: 0.5vw 3vw;
-    text-align: right;
 }
 
 /* Nav Menu Essentials */
