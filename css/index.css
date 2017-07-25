@@ -1,0 +1,138 @@
+/* nav bar */
+
+.nav-bar {
+    background-color: black;
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    right: 0px;
+}
+
+.nav-bar a {
+    float: right;
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 0px 30px;
+}
+
+.nav-bar a:hover {
+    color: #03C4EB;
+}
+
+/* first */
+
+#first {
+    display: table;
+    width: 100%;
+    height: calc(100vh);
+    background: url("../img/firstImage.jpg") top center fixed;
+    background-size: cover;
+    text-align: center;
+    line-height: 4vh;
+}
+
+#first .title {
+    font-size: 14vh;
+    color: white;
+    display: inline-block;
+    margin-top: 17vh;
+    width: 100%;
+}
+
+#first .title2 {
+    font-size: 14vh;
+    color: white;
+    display: inline-block;
+    margin-top: 9vh;
+    width: 100%;
+}
+
+#first .slogan {
+    font-size: 7vh;
+    color: white;
+    display: inline-block;
+    margin-top: 10vh;
+}
+
+#first .btn-get-started {
+    background: #03C4EB;
+    border: 3px solid #03C4EB;
+    color: #fff;
+    margin-top: 16vh;
+}
+
+#first .btn-get-started:hover {
+    background: none;
+    border: 3px solid #fff;
+    color: #fff;
+}
+
+#first .actions a {
+    font-weight: 500;
+    font-size: 50px;
+    display: inline-block;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: 0.4s;
+    text-decoration: none;
+    line-height: 4vh;
+}
+
+/* who we are */
+
+#who-we-are {
+    display: table;
+    width: 100%;
+    background-color: #E0F6F9;
+    text-align: center;
+    padding-top: 5vh;
+}
+
+#who-we-are .title {
+    font-size: 8vh;
+}
+
+#who-we-are .paragraph {
+    font-size: 4vh;
+    margin: 0 30vh;
+}
+
+/* what we do */
+
+#what-we-do {
+    display: table;
+    width: 100%;
+    height: calc(100vh);
+    background-color: #425661;
+    color: white;
+    padding-top: 5vh;
+}
+
+#what-we-do .title {
+    font-size: 8vh;
+    text-align: center;
+}
+
+#what-we-do .paragraph-left {
+    font-size: 2.04vw;
+    margin: 0px 30px;
+    text-align: left;
+    vertical-align: top;
+}
+
+#what-we-do .paragraph-right {
+    font-size: 2.04vw;
+    margin: 0 30px 0 30px;
+    text-align: right;
+}
+
+#what-we-do .square-image {
+    object-position: center;
+    object-fit: cover;
+    overflow: hidden;
+    width: 49.35vw;
+    height: 49.35vw;
+}
