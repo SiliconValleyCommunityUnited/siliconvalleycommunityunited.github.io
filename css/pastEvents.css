@@ -17,7 +17,7 @@
 }
 
 #past-events .label {
-    font-size: 4vw;
+    font-size: 3.5vw;
     font-weight: normal;
     text-align: center;
 }
@@ -37,6 +37,12 @@
 }
 #past-events .buttonCenter{
     margin-top: 5vh;
+    text-align:center;
+}
+
+#past-events .centerPicture{
+    margin:0 auto;
+    width: 60vw;
     text-align:center;
 }
 
