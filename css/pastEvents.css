@@ -24,10 +24,12 @@
     font-size: 1.76vw;
     margin: 0.5vw 3vw;
     text-align: left;
+/*    margin-bottom:800px;*/
 }
 
 #past-events .paragraph-right {
     font-size: 1.76vw;
     margin: 0.5vw 3vw;
     text-align: right;
+    
 }
