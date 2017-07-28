@@ -46,5 +46,12 @@
     text-align:center;
 }
 
+#past-events .btn-lg2,
+.btn-group-lg > .btn {
+  padding: .9vw 1.6vw;
+  font-size: 1.3vw;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
 
 
