@@ -31,10 +31,10 @@
     display: table;
     width: 100%;
     height: calc(15 * var(--factor));
-    background: url("../img/firstImage.jpg") top center fixed;
-    background-size: contain;
+    background: url("../img/firstImage.jpg") center;
+    background-size: cover;
     text-align: center;
-    line-height: calc(15 * var(--factor));
+    line-height: calc(14 * var(--factor));
 }
 
 #first .title {
@@ -61,19 +61,20 @@
 
 #first .btn-get-started {
     background: #03C4EB;
-    border: 3px solid #03C4EB;
+    border: calc(0.5 * var(--factor)) solid #03C4EB;
     color: #fff;
     margin-top: calc(3 * var(--factor));
+    margin-bottom: calc(7 * var(--factor));
 }
 
 #first .btn-get-started:hover {
     background: none;
-    border: 3px solid #fff;
+    border: calc(0.5 * var(--factor)) solid #fff;
     color: #fff;
 }
 
 #first .actions a {
-    font-weight: 500;
+    font-weight: bold;
     font-size: calc(7 * var(--factor));
     display: inline-block;
     border-radius: 50%;
@@ -81,26 +82,25 @@
     height: calc(8 * var(--factor));
     transition: 0.4s;
     text-decoration: none;
-    line-height: calc(4 * var(--factor));
+    line-height: calc(6 * var(--factor));
 }
 
 /* who we are */
 
 #who-we-are {
-    display: table;
-    width: 100%;
     background-color: #E0F6F9;
     text-align: center;
     padding-top: calc(5 * var(--factor));
 }
 
 #who-we-are .title {
-    font-size: calc(14 * var(--factor));
+    font-size: calc(16 * var(--factor));
 }
 
 #who-we-are .paragraph {
-    font-size: calc(4 * var(--factor));
+    font-size: calc(6 * var(--factor));
     margin: 0 calc(30 * var(--factor));
+    padding-bottom: calc(12 * var(--factor));
 }
 
 /* what we do */
@@ -108,31 +108,31 @@
 #what-we-do {
     display: table;
     width: 100%;
-    height: 100vh;
+    height: 0px;
     background-color: #425661;
     color: white;
     padding-top: calc(5 * var(--factor));
 }
 
 #what-we-do .title {
-    font-size: 7vw;
+    font-size: calc(16 * var(--factor));
     text-align: center;
-    margin: 1vw 0;
+    margin: calc(3 * var(--factor)) 0;
 }
 
 #what-we-do .label {
-    font-size: 4vw;
+    font-size: calc(11 * var(--factor));
     font-weight: normal;
 }
 
 #what-we-do .paragraph-left {
-    font-size: 1.76vw;
-    margin: 0.5vw 3vw;
+    font-size: calc(4 * var(--factor));
+    margin: calc(6 * var(--factor));
     text-align: left;
 }
 
 #what-we-do .paragraph-right {
-    font-size: 1.76vw;
-    margin: 0.5vw 3vw;
+    font-size: calc(4 * var(--factor));
+    margin: calc(6 * var(--factor));
     text-align: right;
 }
