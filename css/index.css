@@ -30,7 +30,7 @@
 #first {
     display: table;
     width: 100%;
-    height: calc(15 * var(--factor));
+    height: calc(110 * var(--factor));
     background: url("../img/firstImage.jpg") top center fixed;
     background-size: 100%;
     text-align: center;
