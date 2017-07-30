@@ -38,7 +38,7 @@
 }
 
 #first .title {
-    font-size: calc(14 * var(--factor));
+    font-size: calc(16 * var(--factor));
     color: white;
     display: inline-block;
     margin-top: calc(10 * var(--factor));
@@ -46,7 +46,7 @@
 }
 
 #first .title2 {
-    font-size: calc(14 * var(--factor));
+    font-size: calc(16 * var(--factor));
     color: white;
     display: inline-block;
     width: 100%;
