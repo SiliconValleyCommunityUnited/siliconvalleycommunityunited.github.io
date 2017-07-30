@@ -13,7 +13,6 @@
     font-size: 7vw;
     text-align: center;
     margin: 1vw 0;
-/*    vertical-align: text-top;*/
 }
 
 #past-events .label {
@@ -22,21 +21,34 @@
     text-align: center;
 }
 
+#past-events .mini-title {
+    font-size: 4vw;
+    font-weight: normal;
+    text-align: center;
+    margin: 3vh 0;
+}
+
+#past-events .date {
+    font-size: 2.5vw;
+    font-weight: normal;
+    text-align: center;
+    margin: 2vh 0;
+}
+
 #past-events .paragraph-left {
     font-size: 1.76vw;
     margin: 0.5vw 3vw;
     text-align: left;
-/*    margin-bottom:800px;*/
 }
 
 #past-events .paragraph-right {
     font-size: 1.76vw;
     margin: 0.5vw 3vw;
     text-align: right;
-    
+
 }
 #past-events .buttonCenter{
-    margin-top: 5vh;
+    margin: 10vh 0;
     text-align:center;
 }
 
@@ -53,5 +65,3 @@
   line-height: 1.3333333;
   border-radius: 6px;
 }
-
-
