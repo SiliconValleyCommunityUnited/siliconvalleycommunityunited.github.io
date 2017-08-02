@@ -54,4 +54,6 @@
   border-radius: 6px;
 }
 
-
+#past-events .th {
+    width:50vw;
+}
