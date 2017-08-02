@@ -30,20 +30,15 @@
 #first {
     display: table;
     width: 100%;
-    height: calc(110 * var(--factor));
-<<<<<<< HEAD
-    background: url("../img/firstImage.jpg") center;
-    background-size: cover;
-=======
+    height: calc(15 * var(--factor));
     background: url("../img/firstImage.jpg") top center fixed;
     background-size: 100%;
->>>>>>> master
     text-align: center;
-    line-height: calc(14 * var(--factor));
+    line-height: calc(15 * var(--factor));
 }
 
 #first .title {
-    font-size: calc(16 * var(--factor));
+    font-size: calc(14 * var(--factor));
     color: white;
     display: inline-block;
     margin-top: calc(10 * var(--factor));
@@ -51,7 +46,7 @@
 }
 
 #first .title2 {
-    font-size: calc(16 * var(--factor));
+    font-size: calc(14 * var(--factor));
     color: white;
     display: inline-block;
     width: 100%;
@@ -66,20 +61,19 @@
 
 #first .btn-get-started {
     background: #03C4EB;
-    border: calc(0.5 * var(--factor)) solid #03C4EB;
+    border: 3px solid #03C4EB;
     color: #fff;
     margin-top: calc(3 * var(--factor));
-    margin-bottom: calc(7 * var(--factor));
 }
 
 #first .btn-get-started:hover {
     background: none;
-    border: calc(0.5 * var(--factor)) solid #fff;
+    border: 3px solid #fff;
     color: #fff;
 }
 
 #first .actions a {
-    font-weight: bold;
+    font-weight: 500;
     font-size: calc(7 * var(--factor));
     display: inline-block;
     border-radius: 50%;
@@ -87,25 +81,26 @@
     height: calc(8 * var(--factor));
     transition: 0.4s;
     text-decoration: none;
-    line-height: calc(6 * var(--factor));
+    line-height: calc(4 * var(--factor));
 }
 
 /* who we are */
 
 #who-we-are {
+    display: table;
+    width: 100%;
     background-color: #E0F6F9;
     text-align: center;
     padding-top: calc(5 * var(--factor));
 }
 
 #who-we-are .title {
-    font-size: calc(16 * var(--factor));
+    font-size: calc(14 * var(--factor));
 }
 
 #who-we-are .paragraph {
-    font-size: calc(6 * var(--factor));
+    font-size: calc(4 * var(--factor));
     margin: 0 calc(30 * var(--factor));
-    padding-bottom: calc(12 * var(--factor));
 }
 
 /* what we do */
@@ -113,31 +108,31 @@
 #what-we-do {
     display: table;
     width: 100%;
-    height: 0px;
+    height: 100vh;
     background-color: #425661;
     color: white;
     padding-top: calc(5 * var(--factor));
 }
 
 #what-we-do .title {
-    font-size: calc(16 * var(--factor));
+    font-size: 7vw;
     text-align: center;
-    margin: calc(3 * var(--factor)) 0;
+    margin: 1vw 0;
 }
 
 #what-we-do .label {
-    font-size: calc(11 * var(--factor));
+    font-size: 4vw;
     font-weight: normal;
 }
 
 #what-we-do .paragraph-left {
-    font-size: calc(4 * var(--factor));
-    margin: calc(6 * var(--factor));
+    font-size: 1.76vw;
+    margin: 0.5vw 3vw;
     text-align: left;
 }
 
 #what-we-do .paragraph-right {
-    font-size: calc(4 * var(--factor));
-    margin: calc(6 * var(--factor));
+    font-size: 1.76vw;
+    margin: 0.5vw 3vw;
     text-align: right;
 }
