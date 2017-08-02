@@ -15,16 +15,32 @@
     margin: 1vw 0;
 }
 
+<<<<<<< HEAD
 #past-events .label {
     font-size: 3.5vw;
     font-weight: normal;
     text-align: center;
 }
 
+=======
+>>>>>>> master
 #past-events .mini-title {
     font-size: 4vw;
+    text-align: center;
+    margin: 3vw 0;
+}
+
+#past-events .date {
+    font-size: 3vw;
+    text-align: center;
+    margin: 2vw 0;
+}
+
+#past-events .label {
+    font-size: 3.5vw;
     font-weight: normal;
     text-align: center;
+<<<<<<< HEAD
     margin: 3vh 0;
 }
 
@@ -33,6 +49,8 @@
     font-weight: normal;
     text-align: center;
     margin: 2vh 0;
+=======
+>>>>>>> master
 }
 
 #past-events .paragraph-left {
@@ -64,4 +82,26 @@
   font-size: 1.3vw;
   line-height: 1.3333333;
   border-radius: 6px;
+}
+#past-events .buttonCenter{
+    margin: 10vh 0;
+    text-align:center;
+}
+
+#past-events .centerPicture{
+    margin:0 auto;
+    width: 60vw;
+    text-align:center;
+}
+
+#past-events .btn-lg2,
+.btn-group-lg > .btn {
+  padding: .9vw 1.6vw;
+  font-size: 1.3vw;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+
+#past-events .th {
+    width:50vw;
 }

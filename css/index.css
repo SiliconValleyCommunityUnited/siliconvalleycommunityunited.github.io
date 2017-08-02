@@ -31,14 +31,19 @@
     display: table;
     width: 100%;
     height: calc(110 * var(--factor));
+<<<<<<< HEAD
     background: url("../img/firstImage.jpg") center;
     background-size: cover;
+=======
+    background: url("../img/firstImage.jpg") top center fixed;
+    background-size: 100%;
+>>>>>>> master
     text-align: center;
     line-height: calc(14 * var(--factor));
 }
 
 #first .title {
-    font-size: calc(14 * var(--factor));
+    font-size: calc(16 * var(--factor));
     color: white;
     display: inline-block;
     margin-top: calc(10 * var(--factor));
@@ -46,7 +51,7 @@
 }
 
 #first .title2 {
-    font-size: calc(14 * var(--factor));
+    font-size: calc(16 * var(--factor));
     color: white;
     display: inline-block;
     width: 100%;
