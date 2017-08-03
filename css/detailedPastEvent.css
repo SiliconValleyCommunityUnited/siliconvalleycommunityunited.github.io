@@ -20,16 +20,11 @@
     font-weight: normal;
 }
 
-#past-events .paragraph-left {
-    font-size: 1.76vw;
-    margin: 0.5vw 3vw;
-    text-align: left;
-}
-
-#past-events .paragraph-right {
-    font-size: 1.76vw;
-    margin: 0.5vw 3vw;
-    text-align: right;
+.description {
+	font-size: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 80vw;
 }
 
 
