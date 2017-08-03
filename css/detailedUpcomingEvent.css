@@ -32,6 +32,9 @@
     text-align: right;
 }
 
+#upcoming-events .button1 {
+    font-size: 20px;
+}
 
 * {box-sizing:border-box}
 body {font-family: Verdana,sans-serif;margin:0}
