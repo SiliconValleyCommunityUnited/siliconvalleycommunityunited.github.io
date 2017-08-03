@@ -1,0 +1,34 @@
+#register {
+    display: table;
+    width: 100%;
+    height: calc(100vh);
+    background-color: #B2BEC6;
+    color: black;
+    text-align: center;
+    font-family: "Futura";
+}
+
+#register .title {
+    font-size: 3vw;
+    margin-top: 1.5vw;
+}
+
+#register .textbox {
+    margin-top: 1.5vw;
+    font-size: 2vw;
+}
+
+#register .done {
+    margin-top: 1vw;
+    font-size: 2vw;
+}
+
+#register .radio {
+    margin-top: 1vw;
+    font-size: 1.5vw;
+}
+
+#register .paragraph {
+    font-size: 2vw;
+    margin-top: 1vw;
+}
