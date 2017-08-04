@@ -1,0 +1,18 @@
+/* about us */
+
+#news {
+    display: table;
+    width: 100%;
+    height: calc(100vh);
+    background-color: #59667A;
+    color: black;
+    text-align: center;
+}
+
+
+
+.paragraph {
+    font-size: 4vh;
+    margin: 0 20vh;
+    margin-top: 5vh;
+}
