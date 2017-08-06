@@ -54,13 +54,8 @@
     margin-top: 3vh;
 }
 
-#subscribe .paragraph {
-    font-size: 4.5vh;
-    margin-top: 5vh;
-}
-
 #subscribe .textbox {
-    margin-top: -5vh;
+    margin-top: 5vh;
     font-size: 4vh;
     font-family: "Futura";
 }
