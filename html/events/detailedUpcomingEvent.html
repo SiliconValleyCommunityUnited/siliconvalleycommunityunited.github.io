@@ -98,65 +98,20 @@
     <section id = "past-events">
         <div class = "title">
             <p>Event Name</p>
-		<h1>Date, Location</h1>
         </div>
 
-<div class="slideshow-container">
+	<table border = "0">
+		<tbody>
+			<tr>
+                    <th> <div style="background-image: url(../img/healthFieldLecture.jpg); margin-left:auto; margin-right:0px; height: 42vw; width: 42vw; background-size: cover ">
+                        </div>
+                    </th>
+			</tr>
+		</tbody>
+	    </table>
 
-<div class="mySlides">
-  <div class="numbertext">1 / 3</div>
-  <img src="../../img/firstImage.jpg" style="width:100%">
-</div>
-
-<div class="mySlides">
-  <div class="numbertext">2 / 3</div>
-  <img src="../../img/secondImage.jpg" style="width:100%">
-</div>
-
-<div class="mySlides">
-  <div class="numbertext">3 / 3</div>
-  <img src="../../img/thirdImage.jpg" style="width:100%">
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-</div>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
-
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
-</script>
-
-</body>
         <div align = "center">
+	    <h1>Date, Time, Location, Price</h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vo
                 lutpat turpis sed turpis fermentum dictum. Nulla turpis felis,
