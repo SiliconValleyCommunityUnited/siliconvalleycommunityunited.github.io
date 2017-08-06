@@ -1,3 +1,8 @@
 /bin/
+<<<<<<< HEAD
 .DS_Store
 css/.DS_Store
+=======
+css/.DS_Store
+.DS_Store
+>>>>>>> aacd9f4e4e7ad9860d2d0fbc6844777a014733ac

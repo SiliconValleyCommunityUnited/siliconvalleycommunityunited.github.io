@@ -32,7 +32,7 @@
     width: 100%;
     height: calc(15 * var(--factor));
     background: url("../img/firstImage.jpg") top center fixed;
-    background-size: contain;
+    background-size: 100%;
     text-align: center;
     line-height: calc(15 * var(--factor));
 }
