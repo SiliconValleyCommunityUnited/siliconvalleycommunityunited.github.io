@@ -63,7 +63,7 @@
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="index.html">Home</a></li>
+                    <li class="menu-active"><a href="html/index.html">Home</a></li>
                     <li><a href="#">News</a></li>
                     <li class="menu-has-children"><a href="#">Events</a>
                         <ul>
@@ -86,7 +86,7 @@
                         </ul>
                     </li>
                     <li><a href="#">Membership</a></li>
-                    <li><a href="#">Sign in</a></li>
+                    <li><a href="html/Login.html" id="name" onclick ="logout()">Sign in</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
@@ -215,5 +215,15 @@
 
     <!-- Template Specisifc Custom Javascript File -->
     <script src="js/custom.js"></script>
+    <script type = "text/javascript"> 
+        window.onload = function() {
+            if (localStorage.getItem("email")!="none") {
+                document.getElementById("name").innerHTML = localStorage.getItem("email");
+            }
+        };
+        function logout() {
+            localStorage.setItem("email","none");
+        }
+    </script>
 </body>
 </html>
