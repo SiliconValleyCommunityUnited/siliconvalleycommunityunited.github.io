@@ -102,15 +102,15 @@
 
         <form>
             <div class = "textbox">
-                <input type="text" placeholder = "First Name" size = "35" style = "text-align: center"> <br>
+                <input type = "text" placeholder = "First Name" size = "35" style = "text-align: center"> <br>
             </div>
 
             <div class = "textbox">
-                <input type="text" placeholder = "Last Name" size = "35" style = "text-align: center"> <br>
+                <input type = "text" placeholder = "Last Name" size = "35" style = "text-align: center"> <br>
             </div>
 
             <div class = "textbox">
-                <input type="email" placeholder = "Email" size = "35" style = "text-align: center"> <br>
+                <input type = "email" placeholder = "Email" size = "35" style = "text-align: center"> <br>
             </div>
         </form>
 
@@ -118,15 +118,13 @@
             <p>Payment Method</p>
         </div>
 
-        <form action="">
-            <div class = "radio">
-                <input type="radio"> Paypal<br>
-                <input type="radio"> Upfront
-            </div>
-        </form>
+        <div class = "radio-class">
+            <label class = "radio-inline"><input type = "radio" name = "opt-radio"> Paypal</label>
+            <label class = "radio-inline"><input type = "radio" name = "opt-radio"> Upfront</label>
+        </div>
 
         <div class = "done">
-            <input type="submit" value="Submit">
+            <button type = "submit" class = "btn btn-default btn-lg">Submit</a>
         </div>
     </section>
 

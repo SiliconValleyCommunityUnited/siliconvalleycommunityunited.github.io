@@ -9,7 +9,7 @@
 }
 
 #register .title {
-    font-size: 3vw;
+    font-size: 4vw;
     margin-top: 1.5vw;
 }
 
@@ -23,12 +23,12 @@
     font-size: 2vw;
 }
 
-#register .radio {
+#register .radio-class {
     margin-top: 1vw;
     font-size: 1.5vw;
 }
 
 #register .paragraph {
-    font-size: 2vw;
+    font-size: 3vw;
     margin-top: 1vw;
 }
