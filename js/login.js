@@ -1,7 +1,6 @@
   $(document).ready(function(){
     firebase.auth().onAuthStateChanged(function(user){
       if(user){
-//        $("#asdf").text(firebase.auth().currentUser.displayName);
         alert(firebase.auth().currentUser.displayName);
 //        $("#log").replaceWith("<a>"+firebase.auth().currentUser.displayName+"</a>");
         $("li").eq(1).replaceWith("<a>"+firebase.auth().currentUser.displayName+"</a>");
