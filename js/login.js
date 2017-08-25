@@ -1,8 +1,8 @@
   $(document).ready(function(){
     firebase.auth().onAuthStateChanged(function(user){
-      alert(firebase.auth().currentUser.displayName)
       if(user){
-        $("#asdf").text(firebase.auth().currentUser.displayName);
+//        $("#asdf").text(firebase.auth().currentUser.displayName);
+        alert(firebase.auth().currentUser.displayName)
       }
       
     });
