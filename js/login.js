@@ -2,11 +2,9 @@
 $(document).ready(function(){
   firebase.auth().onAuthStateChanged(function(user){
     if(user){
-      alert(firebase.auth().currentUser.displayName);
-      $("#log").replaceWith("<a>"+"Welcome! " + firebase.auth().currentUser.displayName+"</a>");
+      $("#log").replaceWith("<li><a>"+"Welcome " + firebase.auth().currentUser.displayName+"</a><li><li><a onclick=\"signOut()\">Sign Out</a><li>");
     }
   });
-  alert("here");
 });
 
 //firebase.auth().onAuthStateChanged(function(user){
