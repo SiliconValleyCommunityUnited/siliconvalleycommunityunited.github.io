@@ -99,7 +99,7 @@
         }
           firebase.auth().onAuthStateChanged(function(user){
             if(user){
-              window.location = "LoginSuccessTest.html";
+              window.location = "../index.html";
             }
           })
           document.getElementById('quickstart-sign-in').disabled = true;
@@ -233,7 +233,7 @@
                 <input type="password" class="login-field" value="" placeholder="Password" id="login-pass">
                 <label class="login-field-icon fui-lock" for="login-pass"></label>
               </div>
-              <a class="btn btn-primary btn-large logg" href="#" onclick ="toggleSignIn()">Login</a>
+              <a class="btn btn-primary btn-large logg" onclick ="toggleSignIn()">Login</a>
               <a class="login-link" href="passwordRetrival.html">Lost your password?</a>
             </div>
           </div>

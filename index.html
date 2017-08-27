@@ -89,12 +89,12 @@
                         </ul>
                     </li>
                     <li><a href="html/membership.html">Membership</a></li>
-                    <li><a href="html/Login.html" id="log">Sign in</a></li>
+                    <li id="log"><a href="html/Login.html">Sign in</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
     </header><!-- #header -->
-
+    <script type="text/javascript" src="js/login.js"></script>
     <!--==========================
     Hero Section
     ============================-->
@@ -192,7 +192,13 @@
             </tbody>
         </table>
     </section>
-<script type="text/javascript" src="js/login.js"></script>
+<!--
+  <script>
+    var ref = new Firebase("https://test-2ab4f.firebaseio.com");
+ref.onAuth(authDataCallback);
+  </script>
+-->
+    
     <!-- Required JavaScript Libraries -->
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>

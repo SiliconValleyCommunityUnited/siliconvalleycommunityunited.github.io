@@ -1,15 +1,22 @@
-  $(document).ready(function(){
-    firebase.auth().onAuthStateChanged(function(user){
-      if(user){
-        alert(firebase.auth().currentUser.displayName);
-        $("#log").replaceWith("<a>"+"Welcome! " + firebase.auth().currentUser.displayName+"</a>");
-//        $("li").eq(1).replaceWith("<a>"+firebase.auth().currentUser.displayName+"</a>");
-//        $("li").get(1).text(firebase.auth().currentUser.displayName);
-      }
-      
-    });
-    alert("here");
+  
+$(document).ready(function(){
+  firebase.auth().onAuthStateChanged(function(user){
+    if(user){
+      alert(firebase.auth().currentUser.displayName);
+      $("#log").replaceWith("<a>"+"Welcome! " + firebase.auth().currentUser.displayName+"</a>");
+    }
   });
+  alert("here");
+});
+
+//firebase.auth().onAuthStateChanged(function(user){
+//    if(user){
+//      alert(firebase.auth().currentUser.displayName);
+//      $("#log").replaceWith("<a>"+"Welcome! " + firebase.auth().currentUser.displayName+"</a>");
+//    }
+//});
+
+
 
 
 
