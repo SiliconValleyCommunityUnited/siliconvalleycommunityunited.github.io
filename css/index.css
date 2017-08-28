@@ -74,14 +74,15 @@
 
 #first .actions a {
     font-weight: 500;
-    font-size: calc(7 * var(--factor));
+    font-size: calc(6 * var(--factor));
+/*    font-size: 2vw;*/
     display: inline-block;
     border-radius: 50%;
     width: calc(8 * var(--factor));
     height: calc(8 * var(--factor));
     transition: 0.4s;
     text-decoration: none;
-    line-height: calc(4 * var(--factor));
+    line-height: calc(5.5 * var(--factor));
 }
 
 /* who we are */
