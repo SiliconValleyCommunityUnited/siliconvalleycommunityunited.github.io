@@ -31,7 +31,7 @@
     display: table;
     width: 100%;
     height: calc(15 * var(--factor));
-    background: url("../img/firstImage.jpg") top center fixed;
+    background: url("../img/firstImage.jpg") center fixed;
     background-size: 100%;
     text-align: center;
     line-height: calc(15 * var(--factor));
