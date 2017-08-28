@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Past Events</title>
+    <title>Upcoming Events</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -36,14 +36,27 @@
 
     <!-- Stylesheet Files -->
     <link href="../css/navbar.css" rel="stylesheet">
-	<link href="../css/pastEvents.css" rel="stylesheet">
-
-    <!-- =======================================================
-    Theme Name: Imperial
-    Theme URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-    ======================================================= -->
+	<link href="../css/upcomingEvents.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+    <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyAEvvk4JUpBH5dTcWStG3riLy3Q7e4cgX8",
+          authDomain: "test-2ab4f.firebaseapp.com",
+          databaseURL: "https://test-2ab4f.firebaseio.com",
+          projectId: "test-2ab4f",
+          storageBucket: "test-2ab4f.appspot.com",
+          messagingSenderId: "577570294935"
+        };
+        firebase.initializeApp(config);
+    </script>
+      <script type="text/javascript">
+        function signOut(){
+          firebase.auth().signOut();
+          window.location = "../index.html";
+        }
+      </script>
 </head>
 
 <body>
@@ -67,8 +80,8 @@
                     <li><a href="news.html">News</a></li>
                     <li class="menu-has-children menu-active"><a href="#">Events</a>
                         <ul>
-                            <li><a href="upcomingEvents.html">Upcoming</a></li>
-                            <li class="menu-active"><a href="pastEvents.html">Past</a></li>
+                            <li class="menu-active"><a href="upcomingEvents.html">Upcoming</a></li>
+                            <li><a href="pastEvents.html">Past</a></li>
                         </ul>
                     </li>
                     <li><a href="s-youth.html">S-Youth</a></li>
@@ -86,7 +99,7 @@
                         </ul>
                     </li>
                     <li><a href="membership.html">Membership</a></li>
-                    <li><a href="Login.html">Sign in</a></li>
+                    <li id="log"><a href="Login.html">Sign in</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
@@ -97,7 +110,7 @@
     ============================-->
     <section id = "past-events">
         <div class = "title">
-            <p>Past Events</p>
+            <p>Upcoming Events</p>
         </div>
 
         <table border = "0">
@@ -108,7 +121,7 @@
             <tbody>
 <!--                Left Image-->
                 <tr>
-                    <th> <div style="background-image: url(../img/volleyballCover.jpg); margin-left:auto; margin-right:0px; height: 42vw; width: 42vw; background-size: cover ">
+                    <th> <div style="background-image: url(../img/healthFieldLecture.jpg); margin-left:auto; margin-right:0px; height: 42vw; width: 42vw; background-size: cover ">
                         </div>
                     </th>
 <!--
@@ -122,15 +135,18 @@
 -->
                     <th class="th">
                         <div style="margin-left:10px; margin-right:auto; height: 42vw; width: 42vw;">
-                            <div style="width:100%;height:15%"></div>
-                            <div style="width:100%;height:70%">
-                                <p class="label">Summer Volleyball Camp</p>
-                                <p class="label">7/22/17 ~ 7/29/17</p>
-                                <p class="label"></p>
-                                <p class = "paragraph-left">
-                                    SVCU and HJV foundation held Summer volleyball camp for middle school students. It is a community service program which is free.
+                            <div style="width:100%;height:3%"></div>
+                            <div style="width:100%;height:97%">
+                                <p class="label">Health Field Lecture</p>
+                                <p class = "paragraph-left" style = "font-size: 2vw">
+                                    Silicon Valley Community United
+                                    is hosting a professional lecture about
+                                    the health field (Chinese only). It will
+                                    give you a comprehensive understanding of
+                                    the education requirements and work
+                                    prospects of the health field in the US.
                                 </p>
-                                <p class = "buttonCenter"><a href="detailedPastEvents/volleyballCamp.html" class="btn btn-primary btn-lg2 active" role="button" aria-pressed="true">More Information</a>
+                                <p class = "buttonCenter"><a href="../html/detailedUpcomingEvents/healthFieldLecture.html" class="btn btn-primary btn-lg2 active" role="button" aria-pressed="true">More Information</a>
                                 </p>
                             </div>
                             <div style="width:100%;height:15%"></div>
@@ -141,23 +157,24 @@
 <!--                Right Image-->
                 <tr>
                     <th class="th">
-                        <div style="margin-left:auto; margin-right:10px; height: 42vw; width: 42vw;">
+                        <!-- <div style="margin-left:auto; margin-right:10px; height: 42vw; width: 42vw;">
                             <div style="width:100%;height:15%"></div>
                             <div style="width:100%;height:70%">
-                                <p class="label">Voter Registration</p>
-                                <p class="label">7/27/17</p>
+                                <p class="label">Summer Volleyball Camp</p>
+                                <p class="label">7/22/17~7/29/17</p>
                                 <p class = "paragraph-left">
-                                    An SVCU Youth activity where we helped new
-                                    citizens register as voters.
+
+                                    SVCU and HJV foundation held Summer volleyball camp for middle school students. It is a community service program which is free.
+
                                 </p>
-                                <p class = "buttonCenter"><a href="detailedPastEvents/voterRegistration.html" class="btn btn-primary btn-lg2 active" role="button" aria-pressed="true">More Information</a>
+                                <p class = "buttonCenter"><a href="#" class="btn btn-primary btn-lg2 active" role="button" aria-pressed="true">More Information</a>
                                 </p>
                             </div>
                             <div style="width:100%;height:15%"></div>
-                        </div>
+                        </div> -->
                     </th>
-                    <th> <div style="background-image: url(../img/voterRegistrationCover.jpg); margin-left:0px; margin-right:auto; height: 42vw; width: 42vw; background-size: cover ">
-                        </div>
+                    <!-- <th> <div style="background-image: url(../img/volleyball.jpg); margin-left:0px; margin-right:auto; height: 42vw; width: 42vw; background-size: cover ">
+                        </div> -->
                     </th>
 
                 </tr>
@@ -175,6 +192,7 @@
     <script src="../lib/wow/wow.min.js"></script>
     <script src="../lib/stickyjs/sticky.js"></script>
     <script src="../lib/easing/easing.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>
 
 <!--     Template Specisifc Custom Javascript File -->
     <script src="../js/custom.js"></script>

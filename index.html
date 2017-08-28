@@ -21,7 +21,7 @@
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
 
-    <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+    <!-- Place your favicon.ico  and apple-touch-icon.png in the template root directory -->
     <link href="favicon.ico" rel="shortcut icon">
 
     <!-- Google Fonts -->
@@ -37,16 +37,31 @@
     <!-- Main Stylesheet File -->
     <link href="css/navbar.css" rel="stylesheet">
 	<link href="css/index.css" rel="stylesheet">
-
-    <!-- =======================================================
-    Theme Name: Imperial
-    Theme URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-    ======================================================= -->
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+    <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  </head>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAEvvk4JUpBH5dTcWStG3riLy3Q7e4cgX8",
+      authDomain: "test-2ab4f.firebaseapp.com",
+      databaseURL: "https://test-2ab4f.firebaseio.com",
+      projectId: "test-2ab4f",
+      storageBucket: "test-2ab4f.appspot.com",
+      messagingSenderId: "577570294935"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script type="text/javascript">
+    function signOut(){
+      firebase.auth().signOut();
+      window.location = "index.html";
+    }
+  </script>
 </head>
 
 <body>
+    
     <div id="preloader"></div>
 
     <!--==========================
@@ -64,14 +79,14 @@
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="index.html">Home</a></li>
-                    <li><a href="#">News</a></li>
+                    <li><a href="html/news.html">News</a></li>
                     <li class="menu-has-children"><a href="#">Events</a>
                         <ul>
-                            <li><a href="#">Upcoming</a></li>
+                            <li><a href="html/upcomingEvents.html">Upcoming</a></li>
                             <li><a href="html/pastEvents.html">Past</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">S-Youth</a></li>
+                    <li><a href="html/s-youth.html">S-Youth</a></li>
                     <li class="menu-has-children"><a href="#">About</a>
                         <ul>
                             <li><a href="html/ourStory.html">Our Story</a></li>
@@ -81,17 +96,17 @@
                     </li>
                     <li class="menu-has-children"><a href="#">Support</a>
                         <ul>
-                            <li><a href="#">Donate</a></li>
-                            <li><a href="#">Store</a></li>
+                            <li><a href="html/donate.html">Donate</a></li>
+                            <li><a href="html/store.html">Store</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Membership</a></li>
-                    <li><a href="#">Sign in</a></li>
+                    <li><a href="html/membership.html">Membership</a></li>
+                    <li id="log"><a href="html/Login.html">Sign in</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
     </header><!-- #header -->
-
+    <script type="text/javascript" src="js/login.js"></script>
     <!--==========================
     Hero Section
     ============================-->
@@ -120,20 +135,12 @@
 
         <div class = "paragraph">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vo
-                lutpat turpis sed turpis fermentum dictum. Nulla turpis felis,
-                ultricies et efficitur vel, venenatis sed magna. Sed vitae fauc
-                ibus massa. Quisque condimentum scelerisque rhoncus. Mauris sed
-                est pulvinar, elementum neque at, venenatis eros. Ut nec aliqu
-                am magna. Vestibulum in convallis quam. Maecenas sem quam, frin
-                gilla placerat nulla elementum, dignissim blandit diam. Vivamus
-                ut arcu arcu. Nam neque metus, iaculis sit amet odio a, condim
-                entum ultricies odio. Proin tempus dui a tellus blandit, in fac
-                ilisis leo auctor. Pellentesque leo arcu, lacinia et consequat
-                in, auctor nec tortor.
+                The specific purpose of this Corporation shall be to organize
+                and support community services opportunities, and to facilitate
+                community unification and communication.
             </p>
 
-            <br><br><br>
+            <br>
         </div>
     </section>
 
@@ -149,27 +156,17 @@
 
             <tbody>
                 <tr>
-                    <th width = "50%" background = "img/firstImage.jpg" style = "vertical-align: top; padding-top: 3vw; text-align: right; background-size: cover;">
-                        <p class = "label">Label</p>
+                    <th width = "50%" background = "img/voterRegistrationCover.jpg" style = "vertical-align: top; padding-top: 3vw; text-align: right; background-size: cover;">
+                        <p class = "label">Voter Registration</p>
                     </th>
 
                     <th width = "50%">
                         <p class = "paragraph-left">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                            . Duis ultrices quis elit ut faucibus. Nullam vitae mi
-                            in sem ullamcorper tincidunt nec ut orci. Etiam viverra
-                            feugiat neque, eu tempor ipsum convallis id. Donec eu
-                            gravida lacus. Nulla euismod ut massa sit amet pharetra
-                            . Suspendisse iaculis leo at libero congue interdum. Ma
-                            uris at ligula nec metus tincidunt posuere dignissim at
-                            ligula. Phasellus sed dolor eu libero mattis lobortis
-                            id eget felis. Sed pellentesque augue est, eget blandit
-                            nisi ullamcorper consequat. Sed egestas maximus augue
-                            vel accumsan. Vestibulum nec rutrum orci. Nunc ultricie
-                            s pharetra leo at consectetur. Proin sit amet purus in
-                            ipsum euismod pulvinar. Morbi diam ipsum, ultrices ut u
-                            rna nec, posuere ullamcorper lacus. Proin dictum metus
-                            metus, at tincidunt turpis vehicula vel.
+                            We do regular voter registration events to help new
+                            citizens in Silicon Valley become voters. Youth are
+                            highly encouraged to help out as they can get
+                            community service hours and learn about the
+                            processes of a government.
                         </p>
                     </th>
                 </tr>
@@ -177,32 +174,44 @@
                 <tr>
                     <th width = "50%">
                         <p class = "paragraph-right">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                            . Duis ultrices quis elit ut faucibus. Nullam vitae mi
-                            in sem ullamcorper tincidunt nec ut orci. Etiam viverra
-                            feugiat neque, eu tempor ipsum convallis id. Donec eu
-                            gravida lacus. Nulla euismod ut massa sit amet pharetra
-                            . Suspendisse iaculis leo at libero congue interdum. Ma
-                            uris at ligula nec metus tincidunt posuere dignissim at
-                            ligula. Phasellus sed dolor eu libero mattis lobortis
-                            id eget felis. Sed pellentesque augue est, eget blandit
-                            nisi ullamcorper consequat. Sed egestas maximus augue
-                            vel accumsan. Vestibulum nec rutrum orci. Nunc ultricie
-                            s pharetra leo at consectetur. Proin sit amet purus in
-                            ipsum euismod pulvinar. Morbi diam ipsum, ultrices ut u
-                            rna nec, posuere ullamcorper lacus. Proin dictum metus
-                            metus, at tincidunt turpis vehicula vel.
+                            We host many lectures on various different topics.
+                            These topics can range from advice for college to
+                            how to get a job in the health field. The lectures
+                            also include a time where you can ask questions to
+                            the speaker.
                         </p>
                     </th>
 
-                    <th width = "50%" background = "img/secondImage.jpg" style = "vertical-align: top; padding-top: 3vw; text-align: left; background-size: cover;">
-                        <p class = "label">Label</p>
+                    <th width = "50%" background = "img/healthFieldLecture.jpg" style = "vertical-align: top; padding-top: 3vw; text-align: left; background-size: cover;">
+                        <p class = "label">Lectures</p>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th width = "50%" background = "img/volleyballCover.jpg" style = "vertical-align: top; padding-top: 3vw; text-align: right; background-size: cover;">
+                        <p class = "label">Summer Camps</p>
+                    </th>
+
+                    <th width = "50%">
+                        <p class = "paragraph-left">
+                            We organize many summer camps, including volleyball
+                            and coding. Kids can come and learn new skills
+                            while having fun. The camps usually last a week and
+                            are held at local parks or other community areas.
+                        </p>
                     </th>
                 </tr>
             </tbody>
         </table>
     </section>
-
+  
+<!--
+  <script>
+    var ref = new Firebase("https://test-2ab4f.firebaseio.com");
+ref.onAuth(authDataCallback);
+  </script>
+-->
+    
     <!-- Required JavaScript Libraries -->
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Our Story</title>
+    <title>Register for (Event Name)</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -36,7 +36,7 @@
 
     <!-- Main Stylesheet File -->
     <link href="../css/navbar.css" rel="stylesheet">
-	<link href="../css/ourStory.css" rel="stylesheet">
+    <link href="../css/register.css" rel="stylesheet">
 
     <!-- =======================================================
     Theme Name: Imperial
@@ -65,16 +65,16 @@
                 <ul class="nav-menu">
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="news.html">News</a></li>
-                    <li class="menu-has-children"><a href="#">Events</a>
+                    <li class="menu-has-children menu-active"><a href="#">Events</a>
                         <ul>
-                            <li><a href="upcomingEvents.html">Upcoming</a></li>
+                            <li class="menu-active"><a href="upcomingEvents.html">Upcoming</a></li>
                             <li><a href="pastEvents.html">Past</a></li>
                         </ul>
                     </li>
                     <li><a href="s-youth.html">S-Youth</a></li>
-                    <li class="menu-has-children menu-active"><a href="#">About</a>
+                    <li class="menu-has-children"><a href="#">About</a>
                         <ul>
-                            <li class="menu-active"><a href="ourStory.html">Our Story</a></li>
+                            <li><a href="ourStory.html">Our Story</a></li>
                             <li><a href="contactUs.html">Contact Us</a></li>
                             <li><a href="subscribe.html">Subscribe</a></li>
                         </ul>
@@ -95,26 +95,36 @@
     <!--==========================
     Hero Section
     ============================-->
-    <section id = "image">
+    <section id = "register">
         <div class = "title">
-            <p>Our Story</p>
+            <p>Register for (Event Name)</p>
         </div>
-    </section>
 
-    <section id = "paragraph">
+        <form>
+            <div class = "textbox">
+                <input type = "text" placeholder = "First Name" size = "35" style = "text-align: center"> <br>
+            </div>
+
+            <div class = "textbox">
+                <input type = "text" placeholder = "Last Name" size = "35" style = "text-align: center"> <br>
+            </div>
+
+            <div class = "textbox">
+                <input type = "email" placeholder = "Email" size = "35" style = "text-align: center"> <br>
+            </div>
+        </form>
+
         <div class = "paragraph">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vo
-                lutpat turpis sed turpis fermentum dictum. Nulla turpis felis,
-                ultricies et efficitur vel, venenatis sed magna. Sed vitae fauc
-                ibus massa. Quisque condimentum scelerisque rhoncus. Mauris sed
-                est pulvinar, elementum neque at, venenatis eros. Ut nec aliqu
-                am magna. Vestibulum in convallis quam. Maecenas sem quam, frin
-                gilla placerat nulla elementum, dignissim blandit diam. Vivamus
-                ut arcu arcu. Nam neque metus, iaculis sit amet odio a, condim
-                entum ultricies odio. Proin tempus dui a tellus blandit, in fac
-                ilisis leo auctor. Ut nec aliqu am magna dui iaculis sit amet.
-            </p>
+            <p>Payment Method</p>
+        </div>
+
+        <div class = "radio-class">
+            <label class = "radio-inline"><input type = "radio" name = "opt-radio"> Paypal</label>
+            <label class = "radio-inline"><input type = "radio" name = "opt-radio"> Upfront</label>
+        </div>
+
+        <div class = "done">
+            <button type = "submit" class = "btn btn-default btn-lg">Submit</a>
         </div>
     </section>
 

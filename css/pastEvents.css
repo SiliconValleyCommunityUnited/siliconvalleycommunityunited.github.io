@@ -4,7 +4,7 @@
     display: table;
     width: 100%;
     height: calc(100vh);
-    background-color: #425661;
+    background-color: #3A525A;
     color: white;
     padding-top: 5vh;
 }
@@ -33,7 +33,7 @@
     font-size: 1.76vw;
     margin: 0.5vw 3vw;
     text-align: right;
-    
+
 }
 #past-events .buttonCenter{
     margin-top: 5vh;
