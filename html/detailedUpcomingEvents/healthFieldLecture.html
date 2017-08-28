@@ -54,17 +54,19 @@
       <script type="text/javascript">
         function signOut(){
           firebase.auth().signOut();
-          window.location = "index.html";
+          window.location = "../../index.html";
         }
       </script>
       <script type="text/javascript">
         function registerEvent(){
           var user = firebase.auth().currentUser;
           if(user != null){
-            alert("ran method");
-            firebase.database().ref('events/' + user.uid).set({
-    username: '123123'
-  });
+            firebase.database().ref('events/syouth/healthFieldLecture/' + user.uid).set({
+//              fname: user.firstName,
+//              lname: user.lname,
+              name: user.displayName,
+              email: user.email
+            });
           }
         }
       </script>
