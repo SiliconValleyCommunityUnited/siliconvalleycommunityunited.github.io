@@ -655,6 +655,9 @@ margin-bottom: 70px;
 .control-group {
 margin-bottom: 10px;
 }
+.control-group2{
+  width: 5vw;
+}
 input {
 text-align: center;
 background-color: #ECF0F1;
