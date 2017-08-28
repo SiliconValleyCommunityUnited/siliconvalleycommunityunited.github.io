@@ -48,12 +48,15 @@
   <script type="text/javascript">
     var getEvents = firebase.database().ref('users/');
     getEvents.once('value', function(snapshot) {
-//      updateStarCount(postElement, snapshot.val());
       snapshot.forEach(function(childSnapshot){
-//        console.log(childSnapshot.val().firstName);
         $("#listOfFname").append(childSnapshot.val().firstName + "<br>");
+        $("#listOfLname").append(childSnapshot.val().lastName + "<br>");
+        $("#listOfEmail").append(childSnapshot.val().userEmail + "<br>");
+        
       });
     });
+    
+    
   </script>
     
   <!-- Required JavaScript Libraries -->
@@ -113,6 +116,18 @@
     
   <div id="listOfFname">
     First Names: 
+    <br>
+  </div>
+    <br>
+    <br>
+    <div id="listOfLname">
+    Last Names: 
+    <br>
+  </div>
+    <br>
+    <br>
+    <div id="listOfEmail">
+    Emails: 
     <br>
   </div>
     
