@@ -40,6 +40,7 @@
   <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
     <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
   </head>
+<!--
   <script>
     // Initialize Firebase
     var config = {
@@ -52,13 +53,13 @@
     };
     firebase.initializeApp(config);
   </script>
+-->
   <script type="text/javascript">
     function signOut(){
       firebase.auth().signOut();
       window.location = "index.html";
     }
   </script>
-</head>
 
 <body>
     
@@ -86,7 +87,13 @@
                             <li><a href="html/pastEvents.html">Past</a></li>
                         </ul>
                     </li>
-                    <li><a href="html/s-youth.html">S-Youth</a></li>
+                    <li class="menu-has-children"><a href="#">S-Youth</a>
+                      <ul>
+                          <li><a href="">S-Youth Events</a></li>
+                          <li><a href="html/s-youth.html">About</a></li>
+                          <li><a href="#">fill this in</a></li>
+                      </ul>
+                    </li>
                     <li class="menu-has-children"><a href="#">About</a>
                         <ul>
                             <li><a href="html/ourStory.html">Our Story</a></li>

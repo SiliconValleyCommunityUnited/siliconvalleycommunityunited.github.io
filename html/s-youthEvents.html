@@ -39,18 +39,6 @@
 	<link href="../css/upcomingEvents.css" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
     <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyAEvvk4JUpBH5dTcWStG3riLy3Q7e4cgX8",
-          authDomain: "test-2ab4f.firebaseapp.com",
-          databaseURL: "https://test-2ab4f.firebaseio.com",
-          projectId: "test-2ab4f",
-          storageBucket: "test-2ab4f.appspot.com",
-          messagingSenderId: "577570294935"
-        };
-        firebase.initializeApp(config);
-    </script>
       <script type="text/javascript">
         function signOut(){
           firebase.auth().signOut();
@@ -84,7 +72,13 @@
                             <li><a href="pastEvents.html">Past</a></li>
                         </ul>
                     </li>
-                    <li><a href="s-youth.html">S-Youth</a></li>
+                    <li class="menu-has-children"><a href="#">S-Youth</a>
+                      <ul>
+                          <li><a href="html/s-youthEvents.html">S-Youth Events</a></li>
+                          <li><a href="html/s-youth.html">About</a></li>
+                          <li><a href="#">fill this in</a></li>
+                      </ul>
+                    </li>
                     <li class="menu-has-children"><a href="#">About</a>
                         <ul>
                             <li><a href="ourStory.html">Our Story</a></li>
@@ -104,85 +98,17 @@
             </nav><!-- #nav-menu-container -->
         </div>
     </header><!-- #header -->
-
-    <!--==========================
-    Hero Section
-    ============================-->
-    <section id = "past-events">
-        <div class = "title">
-            <p>Upcoming Events</p>
-        </div>
-
-        <table border = "0">
-            <thead>
-
-            </thead>
-
-            <tbody>
-<!--                Left Image-->
-                <tr>
-                    <th> <div style="background-image: url(../img/healthFieldLecture.jpg); margin-left:auto; margin-right:0px; height: 42vw; width: 42vw; background-size: cover ">
-                        </div>
-                    </th>
-<!--
-                    <th width = "50%">
-                        <p class="centerPicture">
-                            <img src="../img/volleyball.jpg" width="50%" height="50%">
-                        </p>
-
-
-                    </th>
--->
-                    <th class="th">
-                        <div style="margin-left:10px; margin-right:auto; height: 42vw; width: 42vw;">
-                            <div style="width:100%;height:3%"></div>
-                            <div style="width:100%;height:97%">
-                                <p class="label">Health Field Lecture</p>
-                                <p class = "paragraph-left" style = "font-size: 2vw">
-                                    Silicon Valley Community United
-                                    is hosting a professional lecture about
-                                    the health field (Chinese only). It will
-                                    give you a comprehensive understanding of
-                                    the education requirements and work
-                                    prospects of the health field in the US.
-                                </p>
-                                <p class = "buttonCenter"><a href="../html/detailedUpcomingEvents/healthFieldLecture.html" class="btn btn-primary btn-lg2 active" role="button" aria-pressed="true">More Information</a>
-                                </p>
-                            </div>
-                            <div style="width:100%;height:15%"></div>
-                        </div>
-                    </th>
-                </tr>
-
-<!--                Right Image-->
-                <tr>
-                    <th class="th">
-                        <!-- <div style="margin-left:auto; margin-right:10px; height: 42vw; width: 42vw;">
-                            <div style="width:100%;height:15%"></div>
-                            <div style="width:100%;height:70%">
-                                <p class="label">Summer Volleyball Camp</p>
-                                <p class="label">7/22/17~7/29/17</p>
-                                <p class = "paragraph-left">
-
-                                    SVCU and HJV foundation held Summer volleyball camp for middle school students. It is a community service program which is free.
-
-                                </p>
-                                <p class = "buttonCenter"><a href="#" class="btn btn-primary btn-lg2 active" role="button" aria-pressed="true">More Information</a>
-                                </p>
-                            </div>
-                            <div style="width:100%;height:15%"></div>
-                        </div> -->
-                    </th>
-                    <!-- <th> <div style="background-image: url(../img/volleyball.jpg); margin-left:0px; margin-right:auto; height: 42vw; width: 42vw; background-size: cover ">
-                        </div> -->
-
-                </tr>
-
-            </tbody>
-        </table>
-    </section>
-
-<!--     Required JavaScript Libraries -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!--     Required JavaScript Libraries -->
     <script src="../lib/jquery/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="../lib/superfish/hoverIntent.js"></script>
@@ -195,5 +121,5 @@
 
 <!--     Template Specisifc Custom Javascript File -->
     <script src="../js/custom.js"></script>
-</body>
+  </body>
 </html>
