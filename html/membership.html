@@ -37,13 +37,8 @@
     <!-- Main Stylesheet File -->
     <link href="../css/navbar.css" rel="stylesheet">
     <link href="../css/membership.css" rel="stylesheet">
-
-    <!-- =======================================================
-    Theme Name: Imperial
-    Theme URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-    ======================================================= -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 </head>
 
 <body>
@@ -97,11 +92,71 @@
     ============================-->
     <section id = "membership">
         <div class = "paragraph">
-            <p>
-                Under Construction
-            </p>
+            <div id="paypal-button-container"></div>
+
+    <script>
+        paypal.Button.render({
+
+            env: 'sandbox', // sandbox | production
+
+            // PayPal Client IDs - replace with your own
+            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+            client: {
+                sandbox:    'Aa_HOFCuMLRzeLc_lP3KLZv0mvWSiiZUELvfDkTnsJP7pm_yO9gvf1PrTKYql5H8NTx91COjYCtaf5-k',
+                production: '<insert production client id>'
+            },
+
+            // Show the buyer a 'Pay Now' button in the checkout flow
+            commit: true,
+
+            // payment() is called when the button is clicked
+            payment: function(data, actions) {
+
+                // Make a call to the REST api to create the payment
+                return actions.payment.create({
+                    payment: {
+                        transactions: [
+                            {
+                                amount: { total: '10.01', currency: 'USD' }
+                            }
+                        ]
+                    }
+                });
+            },
+
+            // onAuthorize() is called when the buyer approves the payment
+            onAuthorize: function(data, actions) {
+
+                // Make a call to the REST api to execute the payment
+                return actions.payment.execute().then(function() {
+                    window.alert('Payment Complete!');
+                });
+            }
+
+        }, '#paypal-button-container');
+
+    </script>
+        </div>
+        
+        
+        
+        <div class ="paragraph">
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHZwYJKoZIhvcNAQcEoIIHWDCCB1QCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYC6V/79IvvclPxcuS7ii8jAxwyvtmBj5o+Ym0zCtgg7rDdAlOQ5WP1nFxd5vdcjzZkerLpOS1+8mjFH4x4ZvlAus2tbBtzNlaA02uFBBUISICm4EBDkhpLnSTRccnZw4gt3/TBgO6sed1exQ2eA/GE9WAfM1dPUBmWc/VQcxF6jFjELMAkGBSsOAwIaBQAwgeQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQILSL9JcnLVi6AgcB+jEdWXSPZRKoQM6ccySzm+bhtaLI17Dd8OAK+k8oCP5VqXYsKietwlTlAYSJbkj5jaoW2ho0kbzh5hsQXuBL+d8medL2tXFAL9l7AmaQE65FXj3u9JHD3NEHvkVw8vvzTkFxU6EqTdoJz2n3I/u5CIklvvikvG0Y+veCGHXYQ4H9nlp4lm/A91iwVo9cLRzqHuUqHGf2t8d94xQzhvJ/dUqzbaHCFWfNxJFaE2ORLEniYnXto2Kf7hJ52eEmJX8SgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xNzA4MzExODEyMTVaMCMGCSqGSIb3DQEJBDEWBBS+qBQhGMMhfGr/DsQEfEnpPkLq2DANBgkqhkiG9w0BAQEFAASBgJPB+9qEUFigK2Ix+0mS4toNf758wxqbX58WQNHkTw+Z31Hcz7QIOTcP30Vxe1ZLBNJIs4YdjRJiUtuYIncjzhbojvtq73oGjk2WajztyoyXW+41EpiI8YdhNzJc15o7w/z+rteOjOv6WgUZqYKLRLZPRmagtlIsQbpkFvkV44Ay-----END PKCS7-----
+">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+          
+          
+          
         </div>
     </section>
+    
+    
 
     <!-- Required JavaScript Libraries -->
     <script src="../lib/jquery/jquery.min.js"></script>
