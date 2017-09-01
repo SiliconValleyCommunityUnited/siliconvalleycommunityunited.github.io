@@ -40,20 +40,6 @@
   <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
     <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
   </head>
-<!--
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyAEvvk4JUpBH5dTcWStG3riLy3Q7e4cgX8",
-      authDomain: "test-2ab4f.firebaseapp.com",
-      databaseURL: "https://test-2ab4f.firebaseio.com",
-      projectId: "test-2ab4f",
-      storageBucket: "test-2ab4f.appspot.com",
-      messagingSenderId: "577570294935"
-    };
-    firebase.initializeApp(config);
-  </script>
--->
   <script type="text/javascript">
     function signOut(){
       firebase.auth().signOut();
@@ -118,6 +104,7 @@
     Hero Section
     ============================-->
     <section id = "first">
+      <div class="container wow fadeInUp">
         <div class = "title">
             <p>Silicon Valley</p>
         </div>
@@ -133,9 +120,11 @@
         <div class = "actions">
             <a href = "#who-we-are" class = "btn-get-started">v</a>
         </div>
+        </div>
     </section>
 
     <section id = "who-we-are">
+       <div class="container wow fadeInUp">
         <div class = "title">
             <p>Who We Are</p>
         </div>
@@ -148,6 +137,7 @@
             </p>
 
             <br>
+        </div>
         </div>
     </section>
 
