@@ -6,8 +6,8 @@ body{
 #pricing-table {
 /*	margin: 100px ;*/
   margin-left: 50vw auto;
-	text-align: center;
-	width: 892px; /* total computed width = 222 x 3 + 226 */
+  text-align: center;
+  width: 892px; /* total computed width = 222 x 3 + 226 */
 }
 
 #pricing-table .plan {
