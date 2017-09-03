@@ -16,6 +16,10 @@ $(document).ready(function(){
     if(user){
       $("#log").replaceWith("<li><a>"+"Welcome " + firebase.auth().currentUser.displayName+"</a><li><li><a onclick=\"signOut()\">Sign Out</a><li>");
     }
+    firebase.database().ref('members/' + user.uid).set({
+            firstName: "asdf",
+            
+    });
   });
 });
 
