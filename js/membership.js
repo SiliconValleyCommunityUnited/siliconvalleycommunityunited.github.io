@@ -1,4 +1,3 @@
-  
 var config = {
   apiKey: "AIzaSyAEvvk4JUpBH5dTcWStG3riLy3Q7e4cgX8",
   authDomain: "test-2ab4f.firebaseapp.com",
@@ -9,14 +8,9 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
-
 $(document).ready(function(){
-  firebase.auth().onAuthStateChanged(function(user){
-    if(user){
-      $("#log").replaceWith("<li><a>"+"Welcome " + firebase.auth().currentUser.displayName+"</a><li><li><a onclick=\"signOut()\">Sign Out</a><li>");
+  var user = firebase.auth().currentUser;
+    if(user==null){
+      $('#paypal-button-container').replaceWith("<button type=\"button\" class=\"btn btn-primary btn-md\" href=\"Login.html\">Log In</button>");
     }
-  });
 });
-
-

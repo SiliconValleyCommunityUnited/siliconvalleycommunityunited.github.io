@@ -40,25 +40,12 @@
   <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
     <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
   </head>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyAEvvk4JUpBH5dTcWStG3riLy3Q7e4cgX8",
-      authDomain: "test-2ab4f.firebaseapp.com",
-      databaseURL: "https://test-2ab4f.firebaseio.com",
-      projectId: "test-2ab4f",
-      storageBucket: "test-2ab4f.appspot.com",
-      messagingSenderId: "577570294935"
-    };
-    firebase.initializeApp(config);
-  </script>
   <script type="text/javascript">
     function signOut(){
       firebase.auth().signOut();
       window.location = "index.html";
     }
   </script>
-</head>
 
 <body>
     
@@ -86,7 +73,13 @@
                             <li><a href="html/pastEvents.html">Past</a></li>
                         </ul>
                     </li>
-                    <li><a href="html/s-youth.html">S-Youth</a></li>
+                    <li class="menu-has-children"><a href="#">S-Youth</a>
+                      <ul>
+                          <li><a href="html/s-youthEvents.html">S-Youth Events</a></li>
+                          <li><a href="html/s-youth.html">About</a></li>
+                          <li><a href="#">fill this in</a></li>
+                      </ul>
+                    </li>
                     <li class="menu-has-children"><a href="#">About</a>
                         <ul>
                             <li><a href="html/ourStory.html">Our Story</a></li>
@@ -111,6 +104,7 @@
     Hero Section
     ============================-->
     <section id = "first">
+      <div class="container wow fadeInUp">
         <div class = "title">
             <p>Silicon Valley</p>
         </div>
@@ -126,9 +120,11 @@
         <div class = "actions">
             <a href = "#who-we-are" class = "btn-get-started">v</a>
         </div>
+        </div>
     </section>
 
     <section id = "who-we-are">
+       <div class="container wow fadeInUp">
         <div class = "title">
             <p>Who We Are</p>
         </div>
@@ -142,9 +138,11 @@
 
             <br>
         </div>
+        </div>
     </section>
 
     <section id = "what-we-do">
+      
         <div class = "title">
             <p>What We Do</p>
         </div>
@@ -154,6 +152,7 @@
 
             </thead>
 
+<!--
             <tbody>
                 <tr>
                     <th width = "50%" background = "img/voterRegistrationCover.jpg" style = "vertical-align: top; padding-top: 3vw; text-align: right; background-size: cover;">
@@ -202,7 +201,63 @@
                     </th>
                 </tr>
             </tbody>
+-->
+       
+        <tbody>
+<!--                Left Image-->
+                <tr>
+                    <th> <div style="background-image: url(img/voterRegistrationCover.jpg); margin-left:130px; margin-right:auto; height: 42vw; width: 42vw; background-size: cover ">
+                        </div>
+                    </th>
+                    <th class="th">
+                        <div style="margin-left:10px; margin-right:auto; height: 42vw; width: 42vw;">
+                            <div style="width:100%;height:15%"></div>
+                            <div style="width:100%;height:70%">
+                                <p class="label">Voter Registration</p>
+                                <p class = "paragraph-left">
+                                    We do regular voter registration events to help new
+                                    citizens in Silicon Valley become voters. Youth are
+                                    highly encouraged to help out as they can get
+                                    community service hours and learn about the
+                                    processes of a government.
+                                </p>
+                            </div>
+                            <div style="width:100%;height:15%"></div>
+                        </div>
+                    </th>
+                </tr>
+
+<!--                Right Image-->
+                <tr>
+                    <th class="th">
+                        <div style="margin-left:auto; margin-right:10px; height: 42vw; width: 42vw;">
+                            <div style="width:100%;height:15%"></div>
+                            <div style="width:100%;height:70%">
+                               <p class="label">Lectures</p>
+                                <p class = "paragraph-left">
+                                    We organize many summer camps, including volleyball
+                            and coding. Kids can come and learn new skills
+                            while having fun. The camps usually last a week and
+                            are held at local parks or other community areas.
+                                </p>
+                            </div>
+                            <div style="width:100%;height:15%"></div>
+                        </div>
+                    </th>
+                    <th> <div style="background-image: url(img/healthFieldLecture.jpg); margin-left:0px; margin-right:auto; height: 42vw; width: 42vw; background-size: cover ">
+                        </div>
+                    </th>
+
+                </tr>
+
+            </tbody> 
+       
+       
+       
+       
+       
         </table>
+        
     </section>
   
 <!--
