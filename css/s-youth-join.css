@@ -1,0 +1,28 @@
+/* about us */
+#join {
+    display: table;
+    width: 100%;
+    height: calc(100vh);
+    color: white;
+    text-align: center;
+    background: url("../img/sYouthJoin.jpg") fixed;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(29, 53, 98, 0.5);
+}
+
+#join .title {
+    font-size: 9vh;
+    margin-top: 3vh;
+}
+
+#join .textbox {
+    margin-top: 5vh;
+    font-size: 4vh;
+    font-family: "Futura";
+}
+
+#join .done {
+    margin-top: 3vh;
+    font-size: 4vh;
+    color: #565656;
+}

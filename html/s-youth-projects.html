@@ -36,7 +36,7 @@
 
     <!-- Main Stylesheet File -->
     <link href="../css/navbar.css" rel="stylesheet">
-    <link href="../css/s-youth.css" rel="stylesheet">
+    <link href="../css/s-youth-projects.css" rel="stylesheet">
 
     <!-- =======================================================
     Theme Name: Imperial
@@ -71,7 +71,13 @@
                             <li><a href="pastEvents.html">Past</a></li>
                         </ul>
                     </li>
-                    <li class="menu-active"><a href="s-youth.html">S-Youth</a></li>
+                    <li class="menu-has-children"><a href="#">S-Youth</a>
+                        <ul>
+                            <li><a href = "s-youth-about.html">About</a></li>
+                            <li><a href = "s-youth-projects.html">Projects</a></li>
+                            <li><a href = "s-youth-join.html">Join</a></li>
+                        </ul>
+                    </li>
                     <li class="menu-has-children"><a href="#">About</a>
                         <ul>
                             <li><a href="ourStory.html">Our Story</a></li>
@@ -95,13 +101,87 @@
     <!--==========================
     Hero Section
     ============================-->
-    <section id = "s-youth">
-        
-        <div class = "paragraph">
+    <section id = "title-section">
+        <div class = "title">
+            <p>Projects</p>
+        </div>
+
+        <div class = "paragraph-center">
             <p>
-                Under Construction
+                Projects are ongoing activities that are unique to S-Youth
+                members. They can last anywhere from a few months to a few
+                years. Some projects that we have done include Voter
+                Registration and Website Design.
             </p>
         </div>
+    </section>
+
+
+    <section id = "s-youth-projects">
+        <table border = "0">
+            <thead>
+
+            </thead>
+
+            <tbody>
+<!--                Left Image-->
+                <tr>
+                    <th> <div style="background-image: url(../img/voterRegistrationPics/n3.jpg); margin-left:auto; margin-right:0px; height: 42vw; width: 42vw; background-size: cover ">
+                        </div>
+                    </th>
+<!--
+                    <th width = "50%">
+                        <p class="centerPicture">
+                            <img src="../img/volleyball.jpg" width="50%" height="50%">
+                        </p>
+
+
+                    </th>
+-->
+                    <th class="th">
+                        <div style="margin-left:10px; margin-right:auto; height: 42vw; width: 42vw;">
+                            <div style="width:100%;height:15%"></div>
+                            <div style="width:100%;height:70%">
+                                <p class="label">Voter Registration</p>
+                                <p class="label">Since 7/27/17</p>
+                                <p class="label"></p>
+                                <p class = "paragraph-left">
+                                    An SVCU Youth activity where we helped new citizens register as voters.
+                                </p>
+                                <p class = "buttonCenter"><a href="detailedProjects/voterRegistration.html" class="btn btn-primary btn-lg2 active" role="button" aria-pressed="true">More Information</a>
+                                </p>
+                            </div>
+                            <div style="width:100%;height:15%"></div>
+                        </div>
+                    </th>
+                </tr>
+
+<!--                Right Image-->
+                <tr>
+                    <th class="th">
+                        <div style="margin-left:auto; margin-right:10px; height: 42vw; width: 42vw;">
+                            <div style="width:100%;height:15%"></div>
+                            <div style="width:100%;height:70%">
+                                <p class="label">Filler</p> <br>
+                                <p class="label">Since 7/25/17</p>
+                                <p class = "paragraph-left">
+                                    An SVCU Youth activity where we helped new
+                                    citizens register as voters.
+                                </p>
+                                <p class = "buttonCenter"><a href="detailedPastEvents/voterRegistration.html" class="btn btn-primary btn-lg2 active" role="button" aria-pressed="true">More Information</a>
+                                </p>
+                            </div>
+                            <div style="width:100%;height:15%"></div>
+                        </div>
+                    </th>
+                    <th> <div style="background-image: url(../img/voterRegistrationCover.jpg); margin-left:0px; margin-right:auto; height: 42vw; width: 42vw; background-size: cover ">
+                        </div>
+                    </th>
+
+                </tr>
+
+            </tbody>
+        </table>
     </section>
 
     <!-- Required JavaScript Libraries -->
