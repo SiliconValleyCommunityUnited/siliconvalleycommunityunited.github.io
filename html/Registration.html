@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>SVCU | Register</title>
+    <title>Registration</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -33,87 +33,87 @@
     <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
     <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script>
-      // Initialize Firebase
-      var config = {
+    // Initialize Firebase
+    var config = {
         apiKey: "AIzaSyAEvvk4JUpBH5dTcWStG3riLy3Q7e4cgX8",
         authDomain: "test-2ab4f.firebaseapp.com",
         databaseURL: "https://test-2ab4f.firebaseio.com",
         projectId: "test-2ab4f",
         storageBucket: "test-2ab4f.appspot.com",
         messagingSenderId: "577570294935"
-      };
-      firebase.initializeApp(config);
+    };
+    firebase.initializeApp(config);
     </script>
     <script type="text/javascript">
-      
-      function handleSignUp() {
-            var bool = true;
-            var fname = document.getElementById('login-fname').value;
-            var lname = document.getElementById('login-lname').value;
-            var email = document.getElementById('login-email').value;
-            var password = document.getElementById('login-pass').value;
-            if (email.length < 4 ) {
-              alert('Please enter an email address.');
-              return;
-            }
-            if (password.length < 4) {
-              alert('Please enter a password more than 4 length.');
-              return;
-            }
-            // Sign in with email and pass.
-            
-            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-              // Handle Errors here.
-              var errorCode = error.code;
-              var errorMessage = error.message;
-              
-              if (errorCode == 'auth/weak-password') {
+
+    function handleSignUp() {
+        var bool = true;
+        var fname = document.getElementById('login-fname').value;
+        var lname = document.getElementById('login-lname').value;
+        var email = document.getElementById('login-email').value;
+        var password = document.getElementById('login-pass').value;
+        if (email.length < 4 ) {
+            alert('Please enter an email address.');
+            return;
+        }
+        if (password.length < 4) {
+            alert('Please enter a password more than 4 length.');
+            return;
+        }
+        // Sign in with email and pass.
+
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            if (errorCode == 'auth/weak-password') {
                 alert('The password is too weak.');
                 bool = false;
-              } else {
+            } else {
                 alert(errorMessage);
                 bool = false;
-              }
-              console.log(error);
-              
-            }).then(function () {
-              if(document.getElementById('option1').checked){
+            }
+            console.log(error);
+
+        }).then(function () {
+            if(document.getElementById('option1').checked){
                 var type = "adult"
-              }else{
+            }else{
                 var type = "syouth"
-              }
-              var user = firebase.auth().currentUser;
-              if(user != null && bool){
-                  //updateUserInfo([user.uid, name, email, 1], function(){
-                      user.updateProfile({
-                        displayName: fname + " " + lname,
-//                        firstName: fname
-                      }).then(function(){
-                          firebase.database().ref('users/' + user.uid).set({
-                              firstName: fname,
-                              lastName: lname,
-                              userEmail: email,
-                              userType: type
-                            }).then(function(){
-                                goToDashboard();
-                            })    
-                      })
-                  //})
-              }
-          });
-            //window.location.href = "registered.html";
-            //console.log("hi")
-            //href = "registered.html"
-            
-          }
-      function initApp() {
-            // Listening for auth state changes.
-            
-            firebase.auth().onAuthStateChanged(function(user) {
-              
-              document.getElementById('quickstart-verify-email').disabled = true;
-              
-              if (user) {
+            }
+            var user = firebase.auth().currentUser;
+            if(user != null && bool){
+                //updateUserInfo([user.uid, name, email, 1], function(){
+                user.updateProfile({
+                    displayName: fname + " " + lname,
+                    //                        firstName: fname
+                }).then(function(){
+                    firebase.database().ref('users/' + user.uid).set({
+                        firstName: fname,
+                        lastName: lname,
+                        userEmail: email,
+                        userType: type
+                    }).then(function(){
+                        goToDashboard();
+                    })
+                })
+                //})
+            }
+        });
+        //window.location.href = "registered.html";
+        //console.log("hi")
+        //href = "registered.html"
+
+    }
+    function initApp() {
+        // Listening for auth state changes.
+
+        firebase.auth().onAuthStateChanged(function(user) {
+
+            document.getElementById('quickstart-verify-email').disabled = true;
+
+            if (user) {
                 // User is signed in.
                 var displayName = user.displayName;
                 var email = user.email;
@@ -122,136 +122,137 @@
                 var isAnonymous = user.isAnonymous;
                 var uid = user.uid;
                 var providerData = user.providerData;
-                
+
                 document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
                 document.getElementById('quickstart-sign-in').textContent = 'Sign out';
                 document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
                 if (!emailVerified) {
-                  document.getElementById('quickstart-verify-email').disabled = false;
+                    document.getElementById('quickstart-verify-email').disabled = false;
                 }
-                
-              } else {
+
+            } else {
                 // User is signed out.
-                
+
                 document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
                 document.getElementById('quickstart-sign-in').textContent = 'Sign in';
                 document.getElementById('quickstart-account-details').textContent = 'null';
-                
-              }
-              
-              document.getElementById('quickstart-sign-in').disabled = false;
-              
-            });
-            
-            document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-            document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
-            document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
-            document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
-            
-          }
-          window.onload = function() {
-            initApp();
-          };
-      function goToDashboard(){
-          console.log("Go to Dashboard");
-          window.location.href = "../index.html";
-      }    
-        
+
+            }
+
+            document.getElementById('quickstart-sign-in').disabled = false;
+
+        });
+
+        document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+        document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
+        document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
+        document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
+
+    }
+    window.onload = function() {
+        initApp();
+    };
+    function goToDashboard(){
+        console.log("Go to Dashboard");
+        window.location.href = "../index.html";
+    }
+
     </script>
-  </head>
-  <body>
+</head>
+<body>
     <div id="preloader"></div>
-    
+
     <!--==========================
-      Header Section
-      ============================-->
+    Header Section
+    ============================-->
     <header id="header">
-      <div class="container">
-        <div id="logo" class="pull-left">
-          <!--<a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a>-->
-          <!-- Uncomment below if you prefer to use a text image -->
-          <h1><a href="../index.html">SVCU</a></h1>
+        <div class="container">
+            <div id="logo" class="pull-left">
+                <!--<a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a>-->
+                <!-- Uncomment below if you prefer to use a text image -->
+                <h1><a href="../index.html">SVCU</a></h1>
+            </div>
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li class="menu-has-children">
+                        <a href="#">Events</a>
+                        <ul>
+                            <li><a href="upcomingEvents.html">Upcoming</a></li>
+                            <li><a href="pastEvents.html">Past</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="s-youth.html">S-Youth</a></li>
+                    <li class="menu-has-children">
+                        <a href="#">About</a>
+                        <ul>
+                            <li><a href="ourStory.html">Our Story</a></li>
+                            <li><a href="contactUs.html">Contact Us</a></li>
+                            <li><a href="subscribe.html">Subscribe</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-has-children">
+                        <a href="#">Support</a>
+                        <ul>
+                            <li><a href="donate.html">Donate</a></li>
+                            <li><a href="store.html">Store</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li class="menu-active"><a href="Login.html">Sign in</a></li>
+                </ul>
+            </nav>
+            <!-- #nav-menu-container -->
         </div>
-        <nav id="nav-menu-container">
-          <ul class="nav-menu">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="news.html">News</a></li>
-            <li class="menu-has-children">
-              <a href="#">Events</a>
-              <ul>
-                <li><a href="upcomingEvents.html">Upcoming</a></li>
-                <li><a href="pastEvents.html">Past</a></li>
-              </ul>
-            </li>
-            <li><a href="s-youth.html">S-Youth</a></li>
-            <li class="menu-has-children">
-              <a href="#">About</a>
-              <ul>
-                <li><a href="ourStory.html">Our Story</a></li>
-                <li><a href="contactUs.html">Contact Us</a></li>
-                <li><a href="subscribe.html">Subscribe</a></li>
-              </ul>
-            </li>
-            <li class="menu-has-children">
-              <a href="#">Support</a>
-              <ul>
-                <li><a href="donate.html">Donate</a></li>
-                <li><a href="store.html">Store</a></li>
-              </ul>
-            </li>
-            <li><a href="membership.html">Membership</a></li>
-            <li class="menu-active"><a href="Login.html">Sign in</a></li>
-          </ul>
-        </nav>
-        <!-- #nav-menu-container -->
-      </div>
     </header>
     <!-- #header -->
     <!--==========================
-      Hero Section
-      ============================-->
+    Hero Section
+    ============================-->
     <!--==========================
-      About Section
-      ============================-->
-    <section id="about">
-      <div class="container about-container wow fadeInUp">
-        <div class="row">
-          <div class="col-md-6 col-md-push-6 about-content">
-            <h3 class="section-title">Register</h3>
-            <div class="section-title-divider"></div>
-            <p class="section-description">Already have an account? Login <a href="Login.html">here</a></p>
-            <div class="login-form">
-              <div class="control-group">
+    About Section
+    ============================-->
+    <section id="registration">
+        <div class="title">
+            <p>Register</p>
+        </div>
+
+        <div class="text">
+            <p>Already have an account? Login <a href="Login.html">here</a></p>
+        </div>
+            <div class="textbox">
                 <input type="text" class="login-field" value="" placeholder="First Name" id="login-fname">
                 <label class="login-field-icon fui-user" for="login-name"></label>
-              </div>
-              <div class="control-group">
+            </div>
+
+            <div class="textbox">
                 <input type="text" class="login-field" value="" placeholder="Last Name" id="login-lname">
                 <label class="login-field-icon fui-user" for="login-name"></label>
-              </div>
-              <div class="control-group">
+            </div>
+
+            <div class="textbox">
                 <input type="text" class="login-field" value="" placeholder="Email" id="login-email">
                 <label class="login-field-icon fui-user" for="login-name"></label>
-              </div>
-              <div class="control-group">
+            </div>
+
+            <div class="textbox">
                 <input type="password" class="login-field" value="" placeholder="Password" id="login-pass">
                 <label class="login-field-icon fui-lock" for="login-pass"></label>
-              </div>
-              <div class="control-group">
-                <div class="btn-group" data-toggle="buttons">
-                  <label class="btn btn-primary active">
-                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Adult
-                  </label>
-                  <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option2" autocomplete="off"> S-Youth
-                  </label>
-                </div>
-              </div>
-              <a class="btn btn-primary btn-large logg" onclick ="handleSignUp()">Sign Up</a>
             </div>
-          </div>
+
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary active" style = "font-size: 2vw">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Adult
+                </label>
+
+                <label class="btn btn-primary" style = "font-size: 2vw">
+                    <input type="radio" name="options" style = "font-size: 2vw" id="option2" autocomplete="off"> S-Youth
+                </label>
+            </div>
+            <br>
+            <a class="btn btn-primary btn-large logg" style = "font-size: 2vw; margin: 1.5vw 0vw" onclick ="handleSignUp()">Sign Up</a>
         </div>
-      </div>
     </section>
     <!-- Required JavaScript Libraries -->
     <script src="../lib/jquery/jquery.min.js"></script>
@@ -266,5 +267,5 @@
     <script src="../js/custom.js"></script>
     <script src="../contactform/contactform.js"></script>
 
-  </body>
+</body>
 </html>
