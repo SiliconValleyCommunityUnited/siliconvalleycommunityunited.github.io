@@ -21,7 +21,7 @@
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
 
-    <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+    <!-- Place your favicon.ico  and apple-touch-icon.png in the template root directory -->
     <link href="favicon.ico" rel="shortcut icon">
 
     <!-- Google Fonts -->
@@ -37,16 +37,18 @@
     <!-- Main Stylesheet File -->
     <link href="css/navbar.css" rel="stylesheet">
 	<link href="css/index.css" rel="stylesheet">
-
-    <!-- =======================================================
-    Theme Name: Imperial
-    Theme URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-    ======================================================= -->
-</head>
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+    <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  </head>
+  <script type="text/javascript">
+    function signOut(){
+      firebase.auth().signOut();
+      window.location = "index.html";
+    }
+  </script>
 
 <body>
+
     <div id="preloader"></div>
 
     <!--==========================
@@ -91,16 +93,17 @@
                         </ul>
                     </li>
                     <li><a href="html/membership.html">Membership</a></li>
-                    <li><a href="html/Login.html">Sign in</a></li>
+                    <li id="log"><a href="html/Login.html">Sign in</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
     </header><!-- #header -->
-
+    <script type="text/javascript" src="js/login.js"></script>
     <!--==========================
     Hero Section
     ============================-->
     <section id = "first">
+      <div class="container wow fadeInUp">
         <div class = "title">
             <p>Silicon Valley</p>
         </div>
@@ -116,9 +119,11 @@
         <div class = "actions">
             <a href = "#who-we-are" class = "btn-get-started">v</a>
         </div>
+        </div>
     </section>
 
     <section id = "who-we-are">
+       <div class="container wow fadeInUp">
         <div class = "title">
             <p>Who We Are</p>
         </div>
@@ -132,9 +137,11 @@
 
             <br>
         </div>
+        </div>
     </section>
 
     <section id = "what-we-do">
+
         <div class = "title">
             <p>What We Do</p>
         </div>
@@ -144,6 +151,7 @@
 
             </thead>
 
+<!--
             <tbody>
                 <tr>
                     <th width = "50%" background = "img/voterRegistrationCover.jpg" style = "vertical-align: top; padding-top: 3vw; text-align: right; background-size: cover;">
@@ -192,8 +200,71 @@
                     </th>
                 </tr>
             </tbody>
+-->
+
+        <tbody>
+<!--                Left Image-->
+                <tr>
+                    <th> <div style="background-image: url(img/voterRegistrationCover.jpg); margin-left:130px; margin-right:auto; height: 42vw; width: 42vw; background-size: cover ">
+                        </div>
+                    </th>
+                    <th class="th">
+                        <div style="margin-left:10px; margin-right:auto; height: 42vw; width: 42vw;">
+                            <div style="width:100%;height:15%"></div>
+                            <div style="width:100%;height:70%">
+                                <p class="label">Voter Registration</p>
+                                <p class = "paragraph-left">
+                                    We do regular voter registration events to help new
+                                    citizens in Silicon Valley become voters. Youth are
+                                    highly encouraged to help out as they can get
+                                    community service hours and learn about the
+                                    processes of a government.
+                                </p>
+                            </div>
+                            <div style="width:100%;height:15%"></div>
+                        </div>
+                    </th>
+                </tr>
+
+<!--                Right Image-->
+                <tr>
+                    <th class="th">
+                        <div style="margin-left:auto; margin-right:10px; height: 42vw; width: 42vw;">
+                            <div style="width:100%;height:15%"></div>
+                            <div style="width:100%;height:70%">
+                               <p class="label">Lectures</p>
+                                <p class = "paragraph-left">
+                                    We organize many summer camps, including volleyball
+                            and coding. Kids can come and learn new skills
+                            while having fun. The camps usually last a week and
+                            are held at local parks or other community areas.
+                                </p>
+                            </div>
+                            <div style="width:100%;height:15%"></div>
+                        </div>
+                    </th>
+                    <th> <div style="background-image: url(img/healthFieldLecture.jpg); margin-left:0px; margin-right:auto; height: 42vw; width: 42vw; background-size: cover ">
+                        </div>
+                    </th>
+
+                </tr>
+
+            </tbody>
+
+
+
+
+
         </table>
+
     </section>
+
+<!--
+  <script>
+    var ref = new Firebase("https://test-2ab4f.firebaseio.com");
+ref.onAuth(authDataCallback);
+  </script>
+-->
 
     <!-- Required JavaScript Libraries -->
     <script src="lib/jquery/jquery.min.js"></script>

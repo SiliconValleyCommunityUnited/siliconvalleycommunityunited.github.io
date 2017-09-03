@@ -37,13 +37,42 @@
     <!-- Stylesheet Files -->
     <link href="../../css/navbar.css" rel="stylesheet">
     <link href="../../css/detailedUpcomingEvent.css" rel="stylesheet">
-
-    <!-- =======================================================
-    Theme Name: Imperial
-    Theme URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-    ======================================================= -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+    <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyAEvvk4JUpBH5dTcWStG3riLy3Q7e4cgX8",
+          authDomain: "test-2ab4f.firebaseapp.com",
+          databaseURL: "https://test-2ab4f.firebaseio.com",
+          projectId: "test-2ab4f",
+          storageBucket: "test-2ab4f.appspot.com",
+          messagingSenderId: "577570294935"
+        };
+        firebase.initializeApp(config);
+      </script>
+      <script type="text/javascript">
+        function signOut(){
+          firebase.auth().signOut();
+          window.location = "../../index.html";
+        }
+      </script>
+      <script type="text/javascript">
+        function registerEvent(){
+          var user = firebase.auth().currentUser;
+          if(user != null){
+            firebase.database().ref('events/adult/healthFieldLecture/' + user.uid).set({
+              name: user.displayName,
+              email: user.email,
+              type: user.userType
+            });
+            alert("Successfully Registered");
+            window.location = "../../index.html"
+          }else{
+            window.location = "../RegisterForEvent/guestRegister.html"
+          }
+        }
+      </script>
 </head>
 
 <body>
@@ -86,7 +115,7 @@
                         </ul>
                     </li>
                     <li><a href="../membership.html">Membership</a></li>
-                    <li><a href="../Login.html">Sign in</a></li>
+                    <li id="log"><a href="../Login.html">Sign in</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
@@ -95,7 +124,9 @@
     <!--==========================
     Hero Section
     ============================-->
+  
     <section id = "detailed-upcoming-event">
+       <div class="container wow fadeInUp">
         <div class = "title">
             <p>Health Field Lecture</p>
         </div>
@@ -137,11 +168,10 @@
             </p>
         </div>
 
-        <p class = "buttonCenter"><a href="../../html/register.html" class="btn btn-primary btn-lg2 active" role="button" aria-pressed="true">Register</a>
-
-        </div>
-
+        <p class = "buttonCenter"><a href="#" class="btn btn-primary btn-lg2 active" role="button" aria-pressed="true" onclick="registerEvent()">Register</a>
+      </div>
     </section>
+    
 
     <!-- Required JavaScript Libraries -->
     <script src="../../lib/jquery/jquery.min.js"></script>
@@ -152,6 +182,7 @@
     <script src="../../lib/wow/wow.min.js"></script>
     <script src="../../lib/stickyjs/sticky.js"></script>
     <script src="../../lib/easing/easing.js"></script>
+  <script type="text/javascript" src="../../js/login.js"></script>
 
     <!-- Template Specisifc Custom Javascript File -->
     <script src="../../js/custom.js"></script>
