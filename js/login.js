@@ -16,10 +16,23 @@ $(document).ready(function(){
     if(user){
       $("#log").replaceWith("<li><a>"+"Welcome " + firebase.auth().currentUser.displayName+"</a><li><li><a onclick=\"signOut()\">Sign Out</a><li>");
     }
-    firebase.database().ref('members/' + user.uid).set({
-            firstName: "asdf",
+    if(user.uid=='vLXshBeIN5SryIzWP62E5qsKCjD3'){
+      
+        var getEvents = firebase.database().ref('users/');
+        getEvents.once('value', function(snapshot) {
+        snapshot.forEach(function(childSnapshot){
+          firebase.database().ref('members/' + user.uid).set({
+            firstName: childSnapshot.val().firstName,
+            lastName: childSnapshot.val().lastName,
+            userEmail: childSnapshot.val().userEmail,
+            userType: childSnapshot.val().userType,
+            membership: childSnapshot.val().membership
             
-    });
+          });
+        });
+      });
+    }
+    
   });
 });
 
