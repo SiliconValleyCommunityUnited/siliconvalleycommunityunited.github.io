@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Upcoming Events</title>
+    <title>Our Story</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -34,17 +34,16 @@
     <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="../lib/animate-css/animate.min.css" rel="stylesheet">
 
-    <!-- Stylesheet Files -->
+    <!-- Main Stylesheet File -->
     <link href="../css/navbar.css" rel="stylesheet">
-	<link href="../css/s-youthEvents.css" rel="stylesheet">
-    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
-    <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-      <script type="text/javascript">
-        function signOut(){
-          firebase.auth().signOut();
-          window.location = "../index.html";
-        }
-      </script>
+    <link href="../css/s-youth-join.css" rel="stylesheet">
+
+    <!-- =======================================================
+    Theme Name: Imperial
+    Theme URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+    ======================================================= -->
 </head>
 
 <body>
@@ -66,24 +65,24 @@
                 <ul class="nav-menu">
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="news.html">News</a></li>
-                    <li class="menu-has-children menu-active"><a href="#">Events</a>
+                    <li class="menu-has-children"><a href="#">Events</a>
                         <ul>
-                            <li class="menu-active"><a href="upcomingEvents.html">Upcoming</a></li>
+                            <li><a href="upcomingEvents.html">Upcoming</a></li>
                             <li><a href="pastEvents.html">Past</a></li>
                         </ul>
                     </li>
                     <li class="menu-has-children"><a href="#">S-Youth</a>
-                      <ul>
-                          <li><a href="html/s-youthEvents.html">S-Youth Events</a></li>
-                          <li><a href="html/s-youth.html">About</a></li>
-                          <li><a href="#">fill this in</a></li>
-                      </ul>
+                        <ul>
+                            <li><a href = "s-youth-about.html">About</a></li>
+                            <li><a href = "s-youth-projects.html">Projects</a></li>
+                            <li><a href = "s-youth-join.html">Join</a></li>
+                        </ul>
                     </li>
-                    <li class="menu-has-children"><a href="#">About</a>
+                    <li class="menu-has-children menu-active"><a href="#">About</a>
                         <ul>
                             <li><a href="ourStory.html">Our Story</a></li>
                             <li><a href="contactUs.html">Contact Us</a></li>
-                            <li><a href="subscribe.html">Subscribe</a></li>
+                            <li class="menu-active"><a href="subscribe.html">Subscribe</a></li>
                         </ul>
                     </li>
                     <li class="menu-has-children"><a href="#">Support</a>
@@ -93,58 +92,32 @@
                         </ul>
                     </li>
                     <li><a href="membership.html">Membership</a></li>
-                    <li id="log"><a href="Login.html">Sign in</a></li>
+                    <li><a href="Login.html">Sign in</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
     </header><!-- #header -->
-    
-    <section id = "past-events">
+
+    <!--==========================
+    Hero Section
+    ============================-->
+    <section id = "join">
         <div class = "title">
-            <p>Upcoming Events</p>
+            <p>Join S-Youth</p>
         </div>
 
-        <table border = "0">
-            <thead>
+        <form>
+            <div class = "textbox">
+                <input type="email" placeholder = "Enter your email" size = "35" style = "text-align: center"> <br>
+            </div>
 
-            </thead>
+            <div class = "done">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </section>
 
-            <tbody>
-<!--                Left Image-->
-                <tr>
-                    <th> <div style="background-image: url(../img/healthFieldLecture.jpg); margin-left:auto; margin-right:0px; height: 42vw; width: 42vw; background-size: cover ">
-                        </div>
-                    </th>
-                    <th class="th">
-                        <div style="margin-left:10px; margin-right:auto; height: 42vw; width: 42vw;">
-                            <div style="width:100%;height:3%"></div>
-                            <div style="width:100%;height:97%">
-                                <p class="label">test123</p>
-                                <p class = "paragraph-left" style = "font-size: 2vw">
-                                    Silicon Valley Community United
-                                    is hosting a professional lecture about
-                                    the health field (Chinese only). It will
-                                    give you a comprehensive understanding of
-                                    the education requirements and work
-                                    prospects of the health field in the US.
-                                </p>
-                                <p class = "buttonCenter"><a href="../html/detailedUpcomingEvents/healthFieldLecture.html" class="btn btn-primary btn-lg2 active" role="button" aria-pressed="true">More Information</a>
-                                </p>
-                            </div>
-                            <div style="width:100%;height:15%"></div>
-                        </div>
-                    </th>
-                </tr>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <!--     Required JavaScript Libraries -->
+    <!-- Required JavaScript Libraries -->
     <script src="../lib/jquery/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="../lib/superfish/hoverIntent.js"></script>
@@ -153,9 +126,8 @@
     <script src="../lib/wow/wow.min.js"></script>
     <script src="../lib/stickyjs/sticky.js"></script>
     <script src="../lib/easing/easing.js"></script>
-<script type="text/javascript" src="../js/login.js"></script>
 
-<!--     Template Specisifc Custom Javascript File -->
+    <!-- Template Specisifc Custom Javascript File -->
     <script src="../js/custom.js"></script>
-  </body>
+</body>
 </html>
