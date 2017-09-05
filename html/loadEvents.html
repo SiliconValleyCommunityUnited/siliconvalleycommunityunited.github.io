@@ -51,7 +51,7 @@
     var getEvents = firebase.database().ref('users/');
     getEvents.once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot){
-        $("tbody").append("<tr>"+"<td>"+childSnapshot.val().firstName + "</td>"+"<td>"+childSnapshot.val().lastName + "</td>"+"<td>"+childSnapshot.val().userEmail + "</td>"+"<td>"+childSnapshot.val().userType +"</td>"+"<td>"+childSnapshot.val().endDate + "</td>"+"</tr>");
+        $("tbody").append("<tr>"+"<td>"+childSnapshot.val().firstName + "</td>"+"<td>"+childSnapshot.val().lastName + "</td>"+"<td>"+childSnapshot.val().userEmail + "</td>"+"<td>"+childSnapshot.val().userType +"</td>"+"<td>"+childSnapshot.key +"</td>"+"<td>"+childSnapshot.val().endDate + "</td>"+"</tr>");
 //        $("#listOfLname").append(childSnapshot.val().lastName + "<br>");
 //        $("#listOfEmail").append(childSnapshot.val().userEmail + "<br>");
 //        $("#listOfType").append(childSnapshot.val().userType + "<br>");
@@ -132,6 +132,7 @@
       <th>Last Name</th>
       <th>Email</th>
       <th>Type</th>
+      <th>ID</th>
       <th>Membership End</th>
     </tr>
   </thead>

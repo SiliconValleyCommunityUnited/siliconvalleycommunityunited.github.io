@@ -14,13 +14,26 @@ function updateMember(){
   var year = d.getFullYear();
   var month = d.getMonth();
   var day = d.getDate();
-  var c = new Date(year + 1, month, day)
+  var c = new Date(year + 5, month, day)
+  
+//  Date.prototype.yyyymmdd = function() {
+//  var mm = this.getMonth() + 1; // getMonth() is zero-based
+//  var dd = this.getDate();
+//
+//  return [this.getFullYear(),
+//          (mm>9 ? '' : '0') + mm,
+//          (dd>9 ? '' : '0') + dd
+//         ].join('');
+//};
+//
+//var date = new Date();
+//date.yyyymmdd();
   var user = firebase.auth().currentUser;
   var id1 = document.getElementById('enterUserID').value;
     if(user.uid=='vLXshBeIN5SryIzWP62E5qsKCjD3'){
       firebase.database().ref('users/' +id1).update({
         membership: 1,
-        endDate: c
+        endDate: c.toDateString()
       });
       alert("Updated!");
     }
