@@ -10,19 +10,25 @@ var config = {
 firebase.initializeApp(config);
 
 function updateMember(){
-    var user = firebase.auth().currentUser;
+  var d = new Date();
+  var year = d.getFullYear();
+  var month = d.getMonth();
+  var day = d.getDate();
+  var c = new Date(year + 1, month, day)
+  var user = firebase.auth().currentUser;
   var id1 = document.getElementById('enterUserID').value;
     if(user.uid=='vLXshBeIN5SryIzWP62E5qsKCjD3'){
       firebase.database().ref('users/' +id1).update({
-        membership: 1
+        membership: 1,
+        endDate: c
       });
+      alert("Updated!");
     }
 }
 
 
 $(document).ready(function(){
   firebase.auth().onAuthStateChanged(function(user){
-    
     if(user){
       $("#log").replaceWith("<li><a>"+"Welcome " + firebase.auth().currentUser.displayName+"</a><li><li><a onclick=\"signOut()\">Sign Out</a><li>");
     }

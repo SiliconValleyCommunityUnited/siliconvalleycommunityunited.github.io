@@ -33,6 +33,7 @@
     <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
     <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript" src="../js/update.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <script>
     // Initialize Firebase
@@ -50,10 +51,10 @@
     var getEvents = firebase.database().ref('users/');
     getEvents.once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot){
-        $("#listOfFname").append(childSnapshot.val().firstName + "<br>");
-        $("#listOfLname").append(childSnapshot.val().lastName + "<br>");
-        $("#listOfEmail").append(childSnapshot.val().userEmail + "<br>");
-        $("#listOfType").append(childSnapshot.val().userType + "<br>");
+        $("tbody").append("<tr>"+"<td>"+childSnapshot.val().firstName + "</td>"+"<td>"+childSnapshot.val().lastName + "</td>"+"<td>"+childSnapshot.val().userEmail + "</td>"+"<td>"+childSnapshot.val().userType +"</td>"+"<td>"+childSnapshot.val().endDate + "</td>"+"</tr>");
+//        $("#listOfLname").append(childSnapshot.val().lastName + "<br>");
+//        $("#listOfEmail").append(childSnapshot.val().userEmail + "<br>");
+//        $("#listOfType").append(childSnapshot.val().userType + "<br>");
         
       });
     });
@@ -118,34 +119,26 @@
     
     <label for="example-text-input" class="col-2 col-form-label">Enter ID to make member</label>
   <div class="width: 100px;">
-    <input class="width: 100px;" type="text" value="" id="enterUserID">
+    <input class="width: 100px" type="text" value="" id="enterUserID">
   </div>
    <button type="button" class="btn btn-primary" onclick="updateMember()">Update</button>
     <br>
-  <div id="listOfFname">
-    First Names: 
     <br>
-  </div>
-    <br>
-    <br>
-    <div id="listOfLname">
-    Last Names: 
-    <br>
-  </div>
-    <br>
-    <br>
-    <div id="listOfEmail">
-    Emails: 
-    <br>
-  </div>
-    <br>
-    <br>
-    <div id="listOfType">
-    Emails: 
-    <br>
-  </div>
-    
-    
+    <table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Type</th>
+      <th>Membership End</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
     
     
   </body>
