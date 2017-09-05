@@ -117,41 +117,6 @@
               document.getElementById('quickstart-verify-email').disabled = true;
               
               if (user) {
-=======
-            }
-            var user = firebase.auth().currentUser;
-            if(user != null && bool){
-                //updateUserInfo([user.uid, name, email, 1], function(){
-                user.updateProfile({
-                    displayName: fname + " " + lname,
-                    //                        firstName: fname
-                }).then(function(){
-                    firebase.database().ref('users/' + user.uid).set({
-                        firstName: fname,
-                        lastName: lname,
-                        userEmail: email,
-                        userType: type
-                    }).then(function(){
-                        goToDashboard();
-                    })
-                })
-                //})
-            }
-        });
-        //window.location.href = "registered.html";
-        //console.log("hi")
-        //href = "registered.html"
-
-    }
-    function initApp() {
-        // Listening for auth state changes.
-
-        firebase.auth().onAuthStateChanged(function(user) {
-
-            document.getElementById('quickstart-verify-email').disabled = true;
-
-            if (user) {
->>>>>>> homePage
                 // User is signed in.
                 var displayName = user.displayName;
                 var email = user.email;
