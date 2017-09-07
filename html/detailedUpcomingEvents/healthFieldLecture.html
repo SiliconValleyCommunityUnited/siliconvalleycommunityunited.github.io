@@ -37,21 +37,29 @@
     <!-- Stylesheet Files -->
     <link href="../../css/navbar.css" rel="stylesheet">
     <link href="../../css/detailedUpcomingEvent.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/login.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
     <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyAEvvk4JUpBH5dTcWStG3riLy3Q7e4cgX8",
-          authDomain: "test-2ab4f.firebaseapp.com",
-          databaseURL: "https://test-2ab4f.firebaseio.com",
-          projectId: "test-2ab4f",
-          storageBucket: "test-2ab4f.appspot.com",
-          messagingSenderId: "577570294935"
-        };
-        firebase.initializeApp(config);
-      </script>
+     <script>
+  var config = {
+  apiKey: "AIzaSyAEvvk4JUpBH5dTcWStG3riLy3Q7e4cgX8",
+  authDomain: "test-2ab4f.firebaseapp.com",
+  databaseURL: "https://test-2ab4f.firebaseio.com",
+  projectId: "test-2ab4f",
+  storageBucket: "test-2ab4f.appspot.com",
+  messagingSenderId: "577570294935"
+};
+firebase.initializeApp(config);</script>
+     
       <script type="text/javascript">
+        $(document).ready(function(){
+  firebase.auth().onAuthStateChanged(function(user){
+    if(user){
+      $("#log").replaceWith("<li><a>"+"Welcome " + firebase.auth().currentUser.displayName+"</a><li><li><a onclick=\"signOut()\">Sign Out</a><li>");
+    }
+  });
+});
+
         function signOut(){
           firebase.auth().signOut();
           window.location = "../../index.html";
@@ -60,18 +68,40 @@
       <script type="text/javascript">
         function registerEvent(){
           var user = firebase.auth().currentUser;
-          if(user != null){
-            firebase.database().ref('events/adult/healthFieldLecture/' + user.uid).set({
-              name: user.displayName,
-              email: user.email,
-              type: user.userType
-            });
-            alert("Successfully Registered");
-            window.location = "../../index.html"
-          }else{
-            window.location = "../RegisterForEvent/guestRegister.html"
-          }
+//          alert("here");
+          if(user){
+              var event = firebase.database().ref('users/'+user.uid);
+              event.on('value',function(snapshot){
+                if(snapshot.val().userType=='adult'){    
+                  if(snapshot.val().membership=='1'){
+                    firebase.database().ref('events/adult/healthFieldLecture/' + firebase.auth().currentUser.uid).set({
+                      name: snapshot.val().firstName + " "+ snapshot.val().lastName,
+                      email: snapshot.val().userEmail,
+                      type: snapshot.val().userType
+                    });
+                    alert("Successfully Registered");
+                    window.location = "../../index.html";
+                    
+                  }else{
+                    alert("Need to buy membership or pay for event");          
+                  }
+                }else {
+                  alert("Incorrect User Type");
+                }
+//                alert(snapshot.val().userType);   
+              });
+            }
+          
+//          if(user != null){
+           
+//          }else{
+//            window.location = "../RegisterForEvent/guestRegister.html"
+//          }
         }
+//        function register(user){
+//          alert("here2");
+//          
+//        }
       </script>
 </head>
 
@@ -182,7 +212,7 @@
     <script src="../../lib/wow/wow.min.js"></script>
     <script src="../../lib/stickyjs/sticky.js"></script>
     <script src="../../lib/easing/easing.js"></script>
-  <script type="text/javascript" src="../../js/login.js"></script>
+<!--  <script type="text/javascript" src="../../js/login.js"></script>-->
 
     <!-- Template Specisifc Custom Javascript File -->
     <script src="../../js/custom.js"></script>
