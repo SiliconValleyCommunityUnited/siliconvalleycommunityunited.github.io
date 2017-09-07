@@ -39,6 +39,18 @@ function updateMember(){
     }
 }
 
+function removeMember(){
+    var user = firebase.auth().currentUser;
+  var id1 = document.getElementById('removeUserID').value;
+    if(user.uid=='vLXshBeIN5SryIzWP62E5qsKCjD3'){
+      firebase.database().ref('users/' +id1).update({
+        membership: 0,
+        endDate: null
+      });
+      alert("Updated!");
+    }
+}
+
 
 $(document).ready(function(){
   firebase.auth().onAuthStateChanged(function(user){

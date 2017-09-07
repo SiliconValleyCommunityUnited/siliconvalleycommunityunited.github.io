@@ -116,12 +116,26 @@
         </nav>
       </div>
     </header>
+    <br>
+    <br>
+    <form>
+   
+     
     
-    <label for="example-text-input" class="col-2 col-form-label">Enter ID to make member</label>
-  <div class="width: 100px;">
-    <input class="width: 100px" type="text" value="" id="enterUserID">
-  </div>
-   <button type="button" class="btn btn-primary" onclick="updateMember()">Update</button>
+     
+      <div class="form-group" style="margin-left: 10vw">
+          <label for="enterUserID">Update User to Member</label>
+          <input type="text" style="width: 300px" class="form-control" id="enterUserID" placeholder="Enter User ID">
+      </div>
+       <button type="button" style="margin-left: 10vw" class="btn btn-primary" onclick="updateMember()">Update</button>
+
+       <div class="form-group" style="margin-left: 10vw">
+          <label for="removeUserID">Remove User's Membership</label>
+          <input type="text" style="width: 300px" class="form-control" id="removeUserID" placeholder="Enter User ID">
+     
+      </div>
+       <button type="button" style="margin-left: 10vw" class="btn btn-primary" onclick="removeMember()">Update</button>
+   </form>
     <br>
     <br>
     <table class="table table-bordered table-striped">
