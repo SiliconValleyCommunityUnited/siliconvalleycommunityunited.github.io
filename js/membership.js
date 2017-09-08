@@ -9,8 +9,21 @@ var config = {
 firebase.initializeApp(config);
 
 $(document).ready(function(){
-  var user = firebase.auth().currentUser;
-    if(user==null){
-      $('#paypal-button-container').replaceWith("<button type=\"button\" class=\"btn btn-primary btn-md\" href=\"Login.html\">Log In</button>");
+  firebase.auth().onAuthStateChanged(function(user){
+    if(user){
+      $("#log").replaceWith("<li><a>"+"Welcome " + firebase.auth().currentUser.displayName+"</a><li><li><a onclick=\"signOut()\">Sign Out</a><li>");
+    }
+  });
+});
+
+$(document).ready(function(){
+  firebase.auth().onAuthStateChanged(function(user){
+      var user = firebase.auth().currentUser;
+    if(!user){
+      $('#paypal-button-container').replaceWith("<button type=\"button\" class=\"btn btn-primary btn-md\" onclick=\"window.location.href=\'Login.html\'\">Log In</button>");
     }
 });
+  });
+
+
+

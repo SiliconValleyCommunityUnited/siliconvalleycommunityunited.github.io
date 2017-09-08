@@ -51,10 +51,14 @@
     var getEvents = firebase.database().ref('users/');
     getEvents.once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot){
-        $("tbody").append("<tr>"+"<td>"+childSnapshot.val().firstName + "</td>"+"<td>"+childSnapshot.val().lastName + "</td>"+"<td>"+childSnapshot.val().userEmail + "</td>"+"<td>"+childSnapshot.val().userType +"</td>"+"<td>"+childSnapshot.key +"</td>"+"<td>"+childSnapshot.val().endDate + "</td>"+"</tr>");
-//        $("#listOfLname").append(childSnapshot.val().lastName + "<br>");
-//        $("#listOfEmail").append(childSnapshot.val().userEmail + "<br>");
-//        $("#listOfType").append(childSnapshot.val().userType + "<br>");
+        $("#allUsers").append("<tr>"+"<td>"+childSnapshot.val().firstName + "</td>"+"<td>"+childSnapshot.val().lastName + "</td>"+"<td>"+childSnapshot.val().userEmail + "</td>"+"<td>"+childSnapshot.val().userType +"</td>"+"<td>"+childSnapshot.key +"</td>"+"<td>"+childSnapshot.val().endDate + "</td>"+"</tr>");
+        
+      });
+    });    
+    var getEvents2 = firebase.database().ref('events/adult/healthFieldLecture');
+    getEvents2.once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot){
+        $("#health").append("<tr>"+"<td>"+childSnapshot.val().name + "</td>"+"<td>"+childSnapshot.val().email + "</td>"+"<td>"+childSnapshot.val().type +"</td>"+"<td>"+childSnapshot.key +"</td>" + "</td>"+"</tr>");
         
       });
     });
@@ -139,7 +143,8 @@
     <br>
     <br>
     <table class="table table-bordered table-striped">
-  <thead>
+  <thead id="allUsers">
+   All Users
     <tr>
       
       <th>First Name</th>
@@ -151,6 +156,21 @@
     </tr>
   </thead>
   <tbody>
+  </tbody>
+</table>
+    
+       <table class="table table-bordered table-striped">
+  <thead>
+   Health Field
+    <tr>
+      
+      <th>Name</th>
+      <th>Email</th>
+      <th>Type</th>
+      <th>ID</th>
+    </tr>
+  </thead>
+  <tbody id="health">
   </tbody>
 </table>
 
