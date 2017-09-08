@@ -27,3 +27,13 @@ $(document).ready(function(){
 
 
 
+function requestMembership(){
+  alert("hi");
+   firebase.auth().onAuthStateChanged(function(user){
+    if(user){
+          firebase.database().ref('memberReq/' + user.uid).set({
+            name: user.displayName
+          });
+        }
+  });
+}
