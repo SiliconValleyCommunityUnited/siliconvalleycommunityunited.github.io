@@ -20,7 +20,8 @@ $(document).ready(function(){
   firebase.auth().onAuthStateChanged(function(user){
       var user = firebase.auth().currentUser;
     if(!user){
-      $('#paypal-button-container').replaceWith("<button type=\"button\" class=\"btn btn-primary btn-md\" onclick=\"window.location.href=\'Login.html\'\">Log In</button>");
+//      $('#paypal-button-container').replaceWith("<button type=\"button\" class=\"btn btn-primary btn-md\" onclick=\"window.location.href=\'Login.html\'\">Log In</button>");
+      $('#paypal-button-container').replaceWith("<a href=\"Login.html\" class=\"button\">Sign Up</a>");
     }
 });
   });
@@ -28,7 +29,6 @@ $(document).ready(function(){
 
 
 function requestMembership(){
-  alert("hi");
    firebase.auth().onAuthStateChanged(function(user){
     if(user){
           firebase.database().ref('memberReq/' + user.uid).set({

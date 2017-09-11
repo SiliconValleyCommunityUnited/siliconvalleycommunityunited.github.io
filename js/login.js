@@ -14,7 +14,7 @@ firebase.initializeApp(config);
 $(document).ready(function(){
   firebase.auth().onAuthStateChanged(function(user){
     if(user){
-      $("#log").replaceWith("<li><a>"+"Welcome " + firebase.auth().currentUser.displayName+"</a><li><li><a onclick=\"signOut()\">Sign Out</a><li>");
+      $("#log").replaceWith("<li><a>"+"Welcome " + firebase.auth().currentUser.displayName+"</a></li><li><a href=\"#\">Account Settings</a></li><li><a onclick=\"signOut()\">Sign Out</a></li>");
     }
   });
 });
