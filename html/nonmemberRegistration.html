@@ -34,6 +34,7 @@
     <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
     <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
   </head>
   <body>
     <div id="preloader"></div>
@@ -58,14 +59,7 @@
                 <li><a href="pastEvents.html">Past</a></li>
               </ul>
             </li>
-            <li class="menu-has-children">
-              <a href="#">S-Youth</a>
-              <ul>
-                <li><a href = "s-youth-about.html">About</a></li>
-                <li><a href = "s-youth-projects.html">Projects</a></li>
-                <li><a href = "s-youth-join.html">Join</a></li>
-              </ul>
-            </li>
+            <li><a href="s-youth.html">S-Youth</a></li>
             <li class="menu-has-children">
               <a href="#">About</a>
               <ul>
@@ -87,58 +81,75 @@
         </nav>
         <!-- #nav-menu-container -->
       </div>
-      <script src="../js/membership.js"></script>
+      <script src="../js/nonmemberRegistration.js"></script>
       <script type="text/javascript">
         function signOut(){
           firebase.auth().signOut();
           window.location = "../index.html";
         }
         
-        function checkPassword(){
-          var user = firebase.auth().currentUser;
-          if(document.getElementById("pass1").value == document.getElementById("pass2").value){
-            user.updatePassword(document.getElementById("pass1").value).then(function() {
-                alert("Success!");
-              }).catch(function(error) {
-              var credential = firebase.auth.EmailAuthProvider.credential(
-                    user.email, 
-                    userProvidedPassword
-                );
-             // Prompt the user to re-provide their sign-in credentials
-                  user.reauthenticateWithCredential(credential).then(function() {
-                    // User re-authenticated.
-                  }).catch(function(error) {
-                    // An error happened.
-                  });
-                alert("Error occured");
-              });
-          }else{
-            alert("Passwords do not match");
-          }
-        }
       </script>
+      
     </header>
-    <div style="margin-left:10vw;margin-right: 10vw;margin-top: 3vw;">
-      <div class="form-group row">
-        <h3>Change Password (May need to signout and sign back in if error occurs) </h3>
-      </div>
+    <div class="columns" style="margin-left: 25vw;">
+  <ul class="price">
+    <li class="header">Non Membership Registration</li>
+    <li class="grey">$30? per event</li>
+    <li>asdf</li>
+    <li>Discounted Events</li>
+    <li>10 Domains</li>
+    <li>1GB Bandwidth</li>
+    <li class="grey"><div id="paypal-button-container"></div></li>
+  </ul>
     </div>
-    <div style="margin-left:10vw;margin-right: 60vw;">
-      <div class="form-group row" >
+     
+     <script>
         
-        <label for="example-text-input" class="col-2 col-form-label">New Password</label>
-        <div class="col-10">
-          <input class="form-control" type="password" value="" id="pass1">
-        </div>
-      </div>
-      <div class="form-group row" >
-        <label for="example-search-input" class="col-2 col-form-label">Confirm Password</label>
-        <div class="col-10">
-          <input class="form-control" type="password" value="" id="pass2"> <br>
-          <button type="button" class="btn btn-primary btn-sm" onclick="checkPassword()">Submit</button>
-        </div>
-      </div>
-    </div>
+        paypal.Button.render({
+        
+            env: 'sandbox', // sandbox | production
+        
+            // PayPal Client IDs - replace with your own
+            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+            client: {
+                sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
+                production: '<insert production client id>'
+            },
+        
+            // Show the buyer a 'Pay Now' button in the checkout flow
+            commit: true,
+        
+            // payment() is called when the button is clicked
+            payment: function(data, actions) {
+                // Make a call to the REST api to create the payment
+                return actions.payment.create({
+                    payment: {
+                        transactions: [
+                            {
+                                amount: { total: '30.00', currency: 'USD' }
+                            }
+                        ]
+                    }
+                });
+            },
+        
+            // onAuthorize() is called when the buyer approves the payment
+            onAuthorize: function(data, actions) {
+                requestEvent();
+                // Make a call to the REST api to execute the payment
+                return actions.payment.execute().then(function() {
+//                    requestMembership();
+                    window.alert('Payment Complete!');
+                     
+                });
+//              requestMembership();
+            }
+        
+        }, '#paypal-button-container');
+        
+      </script>
+     
+      <!-- Required JavaScript Libraries -->
     <script src="../lib/jquery/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="../lib/superfish/hoverIntent.js"></script>
@@ -147,7 +158,7 @@
     <script src="../lib/wow/wow.min.js"></script>
     <script src="../lib/stickyjs/sticky.js"></script>
     <script src="../lib/easing/easing.js"></script>
-    <!-- Template Specisifc Custom Javascript File -->
+        <!-- Template Specisifc Custom Javascript File -->
     <script src="../js/custom.js"></script>
   </body>
 </html>

@@ -66,16 +66,16 @@
             event.on('value',function(snapshot){
               if(snapshot.val().userType=='adult'){    
                 if(snapshot.val().membership=='1'){
-                  firebase.database().ref('events/adult/healthFieldLecture/' + firebase.auth().currentUser.uid).set({
-                    name: snapshot.val().firstName + " "+ snapshot.val().lastName,
-                    email: snapshot.val().userEmail,
-                    type: snapshot.val().userType
-                  });
-                  alert("Successfully Registered");
-                  window.location = "../../index.html";
+                  
+//                  firebase.database().ref('events/adult/healthFieldLecture/' + firebase.auth().currentUser.uid).set({
+//                    name: snapshot.val().firstName + " "+ snapshot.val().lastName,
+//                    email: snapshot.val().userEmail,
+//                    type: snapshot.val().userType
+//                  });
+//                  alert("Successfully Registered");
                   
                 }else{
-                  alert("Need to buy membership or pay for event");          
+                  window.location = "../nonmemberRegistration.html";
                 }
               }else {
                 alert("Incorrect User Type");
