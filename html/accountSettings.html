@@ -34,7 +34,6 @@
     <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
     <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
   </head>
   <body>
     <div id="preloader"></div>
@@ -59,13 +58,14 @@
                 <li><a href="pastEvents.html">Past</a></li>
               </ul>
             </li>
-            <li class="menu-has-children"><a href="#">S-Youth</a>
-                        <ul>
-                            <li><a href = "s-youth-about.html">About</a></li>
-                            <li><a href = "s-youth-projects.html">Projects</a></li>
-                            <li><a href = "s-youth-join.html">Join</a></li>
-                        </ul>
-                    </li>
+            <li class="menu-has-children">
+              <a href="#">S-Youth</a>
+              <ul>
+                <li><a href = "s-youth-about.html">About</a></li>
+                <li><a href = "s-youth-projects.html">Projects</a></li>
+                <li><a href = "s-youth-join.html">Join</a></li>
+              </ul>
+            </li>
             <li class="menu-has-children">
               <a href="#">About</a>
               <ul>
@@ -93,9 +93,48 @@
           firebase.auth().signOut();
           window.location = "../index.html";
         }
+        
+        function checkPassword(){
+          var user = firebase.auth().currentUser;
+          if(document.getElementById("pass1").value == document.getElementById("pass2").value){
+            user.updatePassword(document.getElementById("pass1").value).then(function() {
+                alert("Success!");
+              }).catch(function(error) {
+              var credential = firebase.auth.EmailAuthProvider.credential(
+                    user.email, 
+                    userProvidedPassword
+                );
+             // Prompt the user to re-provide their sign-in credentials
+                  user.reauthenticateWithCredential(credential).then(function() {
+                    // User re-authenticated.
+                  }).catch(function(error) {
+                    // An error happened.
+                  });
+                alert("Error occured");
+              });
+          }else{
+            alert("Passwords do not match");
+          }
+        }
       </script>
     </header>
-          <script src="../lib/jquery/jquery.min.js"></script>
+    <div style="margin-left:10vw;margin-right: 10vw;margin-top: 3vw;">
+      <div class="form-group row" >
+        Change Password (May need to signout and sign back in if error occurs) <br>
+        <label for="example-text-input" class="col-2 col-form-label">New Password</label>
+        <div class="col-10">
+          <input class="form-control" type="password" value="" id="pass1">
+        </div>
+      </div>
+      <div class="form-group row" >
+        <label for="example-search-input" class="col-2 col-form-label">Confirm Password</label>
+        <div class="col-10">
+          <input class="form-control" type="password" value="" id="pass2"> <br>
+          <button type="button" class="btn btn-primary btn-sm" onclick="checkPassword()">Submit</button>
+        </div>
+      </div>
+    </div>
+    <script src="../lib/jquery/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="../lib/superfish/hoverIntent.js"></script>
     <script src="../lib/superfish/superfish.min.js"></script>
@@ -103,9 +142,7 @@
     <script src="../lib/wow/wow.min.js"></script>
     <script src="../lib/stickyjs/sticky.js"></script>
     <script src="../lib/easing/easing.js"></script>
-  
     <!-- Template Specisifc Custom Javascript File -->
     <script src="../js/custom.js"></script>
   </body>
-
 </html>
