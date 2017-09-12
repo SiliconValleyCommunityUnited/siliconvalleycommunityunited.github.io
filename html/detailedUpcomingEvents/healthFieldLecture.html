@@ -60,8 +60,7 @@
     </script>
     <script type="text/javascript">
       function registerEvent(){
-        var user = firebase.auth().currentUser;
-      //          alert("here");
+        var user = firebase.auth().currentUser; 
         if(user){
             var event = firebase.database().ref('users/'+user.uid);
             event.on('value',function(snapshot){

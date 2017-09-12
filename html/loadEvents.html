@@ -48,6 +48,17 @@
     firebase.initializeApp(config);
   </script>
   <script type="text/javascript">
+
+    function checkDates(){
+      var getEvents = firebase.database().ref('users/');
+    getEvents.once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot){
+        if(new Date().getTime() > new Date(childSnapshot.val().endDate).getTime()){
+          $("#expiredUsers").append("<tr>"+"<td>"+childSnapshot.val().firstName + "</td>"+"<td>"+childSnapshot.val().lastName + "</td>"+"<td>"+childSnapshot.val().userEmail + "</td>"+"<td>"+childSnapshot.val().userType +"</td>"+"<td>"+childSnapshot.key +"</td>"+"<td>"+childSnapshot.val().endDate + "</td>"+"</tr>");
+        }
+      });
+    });   
+    }
     var getEvents = firebase.database().ref('users/');
     getEvents.once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot){
@@ -62,7 +73,6 @@
         
       });
     });
-    
     
   </script>
     
@@ -139,9 +149,11 @@
      
       </div>
        <button type="button" style="margin-left: 2vw" class="btn btn-primary" onclick="removeMember()">Update</button>
+       <button type="button" style="margin-left: 2vw" class="btn btn-primary" onclick="checkDates()">Check for Expired Users</button>
    </form>
     <br>
     <br>
+    <div style="margin-left: 2vw; margin-right: 2vw;">
     <table class="table table-bordered table-striped">
   <thead id="allUsers">
    All Users
@@ -158,6 +170,27 @@
   <tbody>
   </tbody>
 </table>
+      <table class="table table-bordered table-striped">
+  <thead id="expiredUsers">
+   Expired Users
+    <tr>
+      
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Type</th>
+      <th>ID</th>
+      <th>Membership End</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+   
+   
+   
+   
+   
     
        <table class="table table-bordered table-striped">
   <thead>
@@ -173,7 +206,7 @@
   <tbody id="health">
   </tbody>
 </table>
-
+</div>
     
     
   </body>

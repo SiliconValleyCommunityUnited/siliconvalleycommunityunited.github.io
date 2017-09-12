@@ -21,7 +21,7 @@ $(document).ready(function(){
       var user = firebase.auth().currentUser;
     if(!user){
 //      $('#paypal-button-container').replaceWith("<button type=\"button\" class=\"btn btn-primary btn-md\" onclick=\"window.location.href=\'Login.html\'\">Log In</button>");
-      $('#paypal-button-container').replaceWith("<a href=\"Login.html\" class=\"button\">Sign Up</a>");
+      $('#paypal-button-container').replaceWith("<a href=\"Login.html\" class=\"button\">Sign In</a>");
     }
 });
   });
