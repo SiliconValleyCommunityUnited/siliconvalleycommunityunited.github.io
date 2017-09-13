@@ -87,7 +87,7 @@
         </nav>
         <!-- #nav-menu-container -->
       </div>
-      <script src="../js/nonmemberRegistration.js"></script>
+      <script src="../js/memberRegistration.js"></script>
       <script type="text/javascript">
         function signOut(){
           firebase.auth().signOut();
@@ -99,12 +99,13 @@
     </header>
     <div class="columns" style="margin-left: 25vw;">
   <ul class="price">
-    <li class="header">Non Membership Registration</li>
+    <li class="header">Membership Registration</li>
     <li class="grey">$30? per event</li>
     <li>asdf</li>
     <li>Discounted Events</li>
     <li>10 Domains</li>
-    <li>1GB Bandwidth</li>
+    <li id="free"></li>
+    <li><a href="#"class="button" onclick="requestFreeEvent()">Use Free Event</a></li>
     <li class="grey"><div id="paypal-button-container"></div></li>
   </ul>
     </div>

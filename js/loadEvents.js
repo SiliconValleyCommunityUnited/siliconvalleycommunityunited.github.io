@@ -33,7 +33,8 @@ function updateMember(){
     if(user.uid=='vLXshBeIN5SryIzWP62E5qsKCjD3'){
       firebase.database().ref('users/' +id1).update({
         membership: 1,
-        endDate: c.toDateString()
+        endDate: c.toDateString(),
+        freeEvents: 3
       });
       alert("Updated!");
     }
