@@ -39,6 +39,7 @@
 	<link href="../css/upcomingEvents.css" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
     <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
     <script>
         // Initialize Firebase
         var config = {
@@ -84,7 +85,14 @@
                             <li><a href="pastEvents.html">Past</a></li>
                         </ul>
                     </li>
-                    <li><a href="s-youth.html">S-Youth</a></li>
+                    <li class="menu-has-children">
+              <a href="#">S-Youth</a>
+              <ul>
+                <li><a href = "s-youth-about.html">About</a></li>
+                <li><a href = "s-youth-projects.html">Projects</a></li>
+                <li><a href = "s-youth-join.html">Join</a></li>
+              </ul>
+            </li>
                     <li class="menu-has-children"><a href="#">About</a>
                         <ul>
                             <li><a href="ourStory.html">Our Story</a></li>
@@ -182,7 +190,7 @@
     <script src="../lib/wow/wow.min.js"></script>
     <script src="../lib/stickyjs/sticky.js"></script>
     <script src="../lib/easing/easing.js"></script>
-<script type="text/javascript" src="../js/login.js"></script>
+
 
 <!--     Template Specisifc Custom Javascript File -->
     <script src="../js/custom.js"></script>
