@@ -48,7 +48,7 @@
       $(document).ready(function(){
         firebase.auth().onAuthStateChanged(function(user){
           if(user){
-            $("#log").replaceWith("<li><a>"+"Welcome " + firebase.auth().currentUser.displayName+"</a><li><li><a onclick=\"signOut()\">Sign Out</a><li>");
+              $("#log").replaceWith("<li class=\"menu-has-children\"><a href=\"#\" class=\"sf-with-ul\">"+"Welcome " + firebase.auth().currentUser.displayName+"</a><ul><li><a href=\"html/accountSettings.html\">Account Settings</a></li></ul></li><li><a onclick=\"signOut()\">Sign Out</a></li>");
           }
         });
       });
@@ -66,7 +66,7 @@
             event.on('value',function(snapshot){
               if(snapshot.val().userType=='adult'){    
                 if(snapshot.val().membership=='1'){
-                  
+                  window.location = "../memberRegistration.html";
 //                  firebase.database().ref('events/adult/healthFieldLecture/' + firebase.auth().currentUser.uid).set({
 //                    name: snapshot.val().firstName + " "+ snapshot.val().lastName,
 //                    email: snapshot.val().userEmail,
@@ -119,7 +119,14 @@
                 <li class="menu-active"><a href="../pastEvents.html">Past</a></li>
               </ul>
             </li>
-            <li><a href="../s-youth.html">S-Youth</a></li>
+            <li class="menu-has-children">
+              <a href="#">S-Youth</a>
+              <ul>
+                <li><a href = "s-youth-about.html">About</a></li>
+                <li><a href = "s-youth-projects.html">Projects</a></li>
+                <li><a href = "s-youth-join.html">Join</a></li>
+              </ul>
+            </li>
             <li class="menu-has-children">
               <a href="#">About</a>
               <ul>
