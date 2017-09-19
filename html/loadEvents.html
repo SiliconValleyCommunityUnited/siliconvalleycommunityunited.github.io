@@ -63,14 +63,31 @@
         $("#allUsers").append("<tr>"+"<td>"+childSnapshot.val().firstName + "</td>"+"<td>"+childSnapshot.val().lastName + "</td>"+"<td>"+childSnapshot.val().userEmail + "</td>"+"<td>"+childSnapshot.val().userType +"</td>"+"<td>"+childSnapshot.key +"</td>"+"<td>"+childSnapshot.val().endDate + "</td>"+"</tr>");
         
       });
-    });    
+    });
+    var getEvents = firebase.database().ref('memberReq/');
+    getEvents.once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot){
+        $("#memberReq").append("<tr>"+"<td>"+childSnapshot.val().name + "</td>"+"<td>"+childSnapshot.val().email + "</td>"+"<td>"+childSnapshot.val().type +"</td>"+"<td>"+childSnapshot.key +"</td>" + "</td>"+"</tr>");
+        
+      });
+    }); 
+    //script for getting events
+
     var getEvents2 = firebase.database().ref('events/adult/healthFieldLecture');
     getEvents2.once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot){
-        $("#health").append("<tr>"+"<td>"+childSnapshot.val().name + "</td>"+"<td>"+childSnapshot.val().email + "</td>"+"<td>"+childSnapshot.val().type +"</td>"+"<td>"+childSnapshot.key +"</td>" + "</td>"+"</tr>");
+        $("#health").append("<tr>"+"<td>"+childSnapshot.val().name + "</td>"+"<td>"+childSnapshot.val().email + "</td>"+"<td>"+childSnapshot.val().type +"</td>"+"<td>"+childSnapshot.key +"</td>" + "</td>"+"</tr>");  
+      });
+    });
+    var getEvents2 = firebase.database().ref('events/adult/healthFieldLecture/nonmember');
+    getEvents2.once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot){
+        $("#healthGuest").append("<tr>"+"<td>"+childSnapshot.val().name + "</td>"+"<td>"+childSnapshot.val().email + "</td>"+"<td>"+childSnapshot.val().type +"</td>"+"<td>"+childSnapshot.key +"</td>" + "</td>"+"</tr>");
         
       });
     });
+
+    //    $("health").append("<tr><td>test</td></tr>");
     
   </script>
   <script type="text/javascript">
@@ -190,6 +207,19 @@
       </table>
       <table class="table table-bordered table-striped">
         <thead>
+          Users Requesting Membership
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Type</th>
+            <th>ID</th>
+          </tr>
+        </thead>
+        <tbody id="memberReq">
+        </tbody>
+      </table>
+      <table class="table table-bordered table-striped">
+        <thead>
           Health Field
           <tr>
             <th>Name</th>
@@ -199,6 +229,19 @@
           </tr>
         </thead>
         <tbody id="health">
+        </tbody>
+      </table>
+      <table class="table table-bordered table-striped">
+        <thead>
+          Health Field Paying at Event
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Type</th>
+            <th>ID</th>
+          </tr>
+        </thead>
+        <tbody id="healthGuest">
         </tbody>
       </table>
     </div>
