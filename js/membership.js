@@ -32,9 +32,8 @@ function requestMembership(){
    firebase.auth().onAuthStateChanged(function(user){
     if(user){
           firebase.database().ref('memberReq/' + user.uid).set({
-          name: snapshot.val().firstName + " "+ snapshot.val().lastName,
-          email: snapshot.val().userEmail,
-          type: snapshot.val().userType
+          name: user.displayName,
+          email: user.email,
           });
         }
   });

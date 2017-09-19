@@ -38,7 +38,9 @@ function updateMember(){
       });
       alert("Updated!");
     }
+  takeOffMemberRequestList()
 }
+
 
 function removeMember(){
     var user = firebase.auth().currentUser;
