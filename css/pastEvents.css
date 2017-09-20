@@ -16,6 +16,11 @@
 /*    vertical-align: text-top;*/
 }
 
+#past-events .toggle-button {
+    font-size: 3vw;
+    margin: 0.5vw 0;
+}
+
 #past-events .label {
     font-size: 3.5vw;
     font-weight: normal;
