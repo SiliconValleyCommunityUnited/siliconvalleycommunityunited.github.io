@@ -34,8 +34,11 @@ function updateMember(){
       firebase.database().ref('users/' +id1).update({
         membership: 1,
         endDate: c.toDateString(),
-        freeEvents: 3
+//        freeEvents: 3
       });
+      firebase.database().ref('freeEvents/'+id1).update({
+        freeEvents: 3
+      })
       alert("Updated!");
     }
   takeOffMemberRequestList()

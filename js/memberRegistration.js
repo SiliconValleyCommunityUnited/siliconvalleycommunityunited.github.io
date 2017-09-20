@@ -19,7 +19,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     firebase.auth().onAuthStateChanged(function(user){
     if(user){
-          var event = firebase.database().ref('users/'+user.uid);
+          var event = firebase.database().ref('freeEvents/'+user.uid);
       event.on('value',function(snapshot){
         $("#free").replaceWith("<li>You have "+snapshot.val().freeEvents+" free events left</li>");
       });
@@ -32,7 +32,7 @@ function requestEvent(){
   if(user){
     var event = firebase.database().ref('users/'+user.uid);
       event.on('value',function(snapshot){
-        firebase.database().ref('events/adult/healthFieldLecture/' + firebase.auth().currentUser.uid).set({
+        firebase.database().ref('events/adult/heathFieldLecture/' + firebase.auth().currentUser.uid).set({
           name: snapshot.val().firstName + " "+ snapshot.val().lastName,
           email: snapshot.val().userEmail,
           type: snapshot.val().userType
@@ -43,26 +43,45 @@ function requestEvent(){
     alert("Not logged in");
   }
 }
+var check = true;
 function requestFreeEvent(){
   var user = firebase.auth().currentUser; 
   if(user){
     var event = firebase.database().ref('users/'+user.uid);
       event.on('value',function(snapshot){
         if(snapshot.val().freeEvents != 0){
-          firebase.database().ref('events/adult/healthFieldLecture/' + firebase.auth().currentUser.uid).set({
+          firebase.database().ref('events/adult/blah/' + user.uid).set({
           name: snapshot.val().firstName + " "+ snapshot.val().lastName,
           email: snapshot.val().userEmail,
           type: snapshot.val().userType
           });
-          firebase.database().ref('users/' + firebase.auth().currentUser.uid).update({
-            freeEvents: snapshot.val().freeEvents - 1
-          });
+          
+          
+//          alert(snapshot.val().freeEvents);
           alert("Registered!");
+          
+//          check = false;
         }else{
           alert("No more free events");
         }
     });
+    var event = firebase.database().ref('freeEvents/'+user.uid);
+    
+      event.on('value',function(snapshot){
+        var temp = parseInt(snapshot.val().freeEvents);
+        if(temp !=temp-1){
+          firebase.database().ref('freeEvents/' + user.uid).update({
+              freeEvents:  temp-1 
+          });
+        }
+        
+        
+          
+      });
+    
+    
   }else{
     alert("Not logged in");
   }
+
 }

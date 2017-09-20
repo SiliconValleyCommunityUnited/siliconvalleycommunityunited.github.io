@@ -96,8 +96,11 @@
                               userType: type,
                               membership: 0,
                               endDate: null,
-                              freeEvents: 3
+//                              freeEvents: 3
                             }).then(function(){
+                            firebase.database().ref('freeEvents/' + user.uid).set({
+                                  freeEvents: 0
+                            });
                                 goToDashboard();
                             })    
                       })
