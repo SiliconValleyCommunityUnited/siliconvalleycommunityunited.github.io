@@ -94,6 +94,13 @@
         
       });
     });
+    var getEvents2 = firebase.database().ref('events/adult/healthFieldLecture/noLogin');
+    getEvents2.once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot){
+        $("#healthNoLogin").append("<tr>"+"<td>"+childSnapshot.val().name + "</td>"+"<td>"+childSnapshot.val().email + "</td>"+ "</td>"+"</tr>");  
+      });
+    });
+    
   </script>
   <script type="text/javascript">
     function signOut(){
@@ -255,6 +262,17 @@
           </tr>
         </thead>
         <tbody id="healthGuest">
+        </tbody>
+      </table>
+      <table class="table table-bordered table-striped">
+        <thead>
+          Health Field No Login
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody id="healthNoLogin">
         </tbody>
       </table>
     </div>
