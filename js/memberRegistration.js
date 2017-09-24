@@ -32,7 +32,7 @@ function requestEvent(){
   if(user){
     var event = firebase.database().ref('users/'+user.uid);
       event.on('value',function(snapshot){
-        firebase.database().ref('events/adult/heathFieldLecture/' + firebase.auth().currentUser.uid).set({
+        firebase.database().ref('events/adult/healthFieldLecture/' + firebase.auth().currentUser.uid).set({
           name: snapshot.val().firstName + " "+ snapshot.val().lastName,
           email: snapshot.val().userEmail,
           type: snapshot.val().userType

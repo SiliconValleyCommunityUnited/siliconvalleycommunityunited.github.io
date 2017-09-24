@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Membership</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+    <meta property="og:title" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+    <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+    <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+    <link href="favicon.ico" rel="shortcut icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../lib/animate-css/animate.min.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/63505dfa32.js"></script>
+    <!-- Main Stylesheet File -->
+    <link href="../css/navbar.css" rel="stylesheet">
+    <link href="../css/membership.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+    <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+  </head>
+  <body>
+    <div id="preloader"></div>
+    <!--==========================
+      Header Section
+      ============================-->
+    <header id="header">
+      <div class="container">
+        <div id="logo" class="pull-left">
+          <!--<a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a>-->
+          <!-- Uncomment below if you prefer to use a text image -->
+          <h1><a href="../index.html">SVCU</a></h1>
+        </div>
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="news.html">News</a></li>
+            <li class="menu-has-children">
+              <a href="#">Events</a>
+              <ul>
+                <li><a href="upcomingEvents.html">Upcoming</a></li>
+                <li><a href="pastEvents.html">Past</a></li>
+              </ul>
+            </li>
+              <li class="menu-has-children"><a href="#">S-Youth</a>
+                <ul>
+                    <li><a href = "s-youth-about.html">About</a></li>
+                    <li><a href = "s-youth-projects.html">Projects</a></li>
+                    <li><a href = "s-youth-join.html">Join</a></li>
+                </ul>
+              </li>
+            <li class="menu-has-children">
+              <a href="#">About</a>
+              <ul>
+                <li><a href="ourStory.html">Our Story</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+                <li><a href="subscribe.html">Subscribe</a></li>
+              </ul>
+            </li>
+            <li class="menu-has-children">
+              <a href="#">Support</a>
+              <ul>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="store.html">Store</a></li>
+              </ul>
+            </li>
+            <li><a href="membership.html">Membership</a></li>
+            <li id="log"><a href="Login.html">Sign in</a></li>
+          </ul>
+        </nav>
+        <!-- #nav-menu-container -->
+      </div>
+      <script src="../js/noLoginRegistration.js"></script>
+      <script type="text/javascript">
+        function signOut(){
+          firebase.auth().signOut();
+          window.location = "../index.html";
+        }
+        
+      </script>
+      
+    </header>
+    <div style="margin-left:35vw;margin-right: 35vw;margin-top: 5vh;">
+      <div class="form-group row" >
+        
+        <label for="example-text-input" class="col-2 col-form-label" style="align-content: center">Name</label>
+        <div class="col-10">
+          <input class="form-control" type="text" value="" id="name">
+        </div>
+      </div>
+      <div class="form-group row" >
+        <label for="example-search-input" class="col-2 col-form-label">Email</label>
+        <div class="col-10">
+          <input class="form-control" type="text" value="" id="email"> <br>
+          <button type="button" class="btn btn-primary btn-sm" onclick="requestEvent()">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="columns" style="margin-left: 25vw;">
+  <ul class="price">
+    <li class="header">No Account Registration</li>
+    <li class="grey">$30? per event</li>
+    <li>asdf</li>
+    <li>Discounted Events</li>
+    <li>10 Domains</li>
+    <li>1GB Bandwidth</li>
+    <li class="grey"><div id="paypal-button-container"></div></li>
+  </ul>
+    </div>
+     
+     <script>
+        
+        paypal.Button.render({
+        
+            env: 'sandbox', // sandbox | production
+        
+            // PayPal Client IDs - replace with your own
+            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+            client: {
+                sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
+                production: '<insert production client id>'
+            },
+        
+            // Show the buyer a 'Pay Now' button in the checkout flow
+            commit: true,
+        
+            // payment() is called when the button is clicked
+            payment: function(data, actions) {
+                // Make a call to the REST api to create the payment
+                return actions.payment.create({
+                    payment: {
+                        transactions: [
+                            {
+                                amount: { total: '30.00', currency: 'USD' }
+                            }
+                        ]
+                    }
+                });
+            },
+        
+            // onAuthorize() is called when the buyer approves the payment
+            onAuthorize: function(data, actions) {
+                requestEvent();
+                // Make a call to the REST api to execute the payment
+                return actions.payment.execute().then(function() {
+//                    requestMembership();
+                    window.alert('Payment Complete!');
+                     
+                });
+//              requestMembership();
+            }
+        
+        }, '#paypal-button-container');
+        
+      </script>
+     
+      <!-- Required JavaScript Libraries -->
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../lib/superfish/hoverIntent.js"></script>
+    <script src="../lib/superfish/superfish.min.js"></script>
+    <script src="../lib/morphext/morphext.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/stickyjs/sticky.js"></script>
+    <script src="../lib/easing/easing.js"></script>
+        <!-- Template Specisifc Custom Javascript File -->
+    <script src="../js/custom.js"></script>
+  </body>
+</html>
