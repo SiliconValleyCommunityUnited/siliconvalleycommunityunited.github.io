@@ -7,8 +7,8 @@ def rename():
     filenames = os.listdir(path)
 
     for filename in filenames:
-        x += 1
-        n1 = str('n'+str(x))
+        n1 = str('n'+str(x)+'.jpg')
         os.rename(filename, n1)
+        x += 1
 
 rename()

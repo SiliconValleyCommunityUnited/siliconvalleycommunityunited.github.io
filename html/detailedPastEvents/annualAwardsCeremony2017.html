@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Volleyball Camp</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+    <meta property="og:title" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+
+    <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+
+    <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+    <link href="favicon.ico" rel="shortcut icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../lib/animate-css/animate.min.css" rel="stylesheet">
+
+    <!-- Stylesheet Files -->
+    <link href="../../css/navbar.css" rel="stylesheet">
+	<link href="../../css/detailedPastEvent.css" rel="stylesheet">
+
+ <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="../../js/login.js"></script>
+    <script type="text/javascript">
+        function signOut(){
+          firebase.auth().signOut();
+          window.location = "../../index.html";
+        }
+     </script>
+</head>
+
+<body>
+    <div id="preloader"></div>
+
+    <!--==========================
+    Header Section
+    ============================-->
+    <header id="header">
+        <script>
+            $(function(){
+                $("#includedContent").load("/html/navbar.html");
+            });
+        </script>
+        <div id="includedContent"></div>
+    </header><!-- #header -->
+
+    <!--==========================
+    Hero Section
+    ============================-->
+    <section id = "past-events">
+        <div class = "title">
+            <p>Annual SVCU Awards Ceremony 2017</p>
+		<h1>7/22/17-7/29/17, Rainbow Park, San Jose</h1>
+        </div>
+
+<div class="slideshow-container">
+
+
+    <div class="mySlides">
+        <div class="numbertext">1 / 14</div>
+        <img src="../../img/annualAwardsCeremony2017Pics/n1.jpg" class="slideImage">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">2 / 14</div>
+        <img src="../../img/annualAwardsCeremony2017Pics/n2.jpg" class="slideImage">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">3 / 14</div>
+        <img src="../../img/annualAwardsCeremony2017Pics/n3.jpg" class="slideImage">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">4 / 14</div>
+        <img src="../../img/annualAwardsCeremony2017Pics/n4.jpg" class="slideImage">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">5 / 14</div>
+        <img src="../../img/annualAwardsCeremony2017Pics/n5.jpg" class="slideImage">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">6 / 14</div>
+        <img src="../../img/annualAwardsCeremony2017Pics/n6.jpg" class="slideImage">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">7 / 14</div>
+        <img src="../../img/annualAwardsCeremony2017Pics/n7.jpg" class="slideImage">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">8 / 14</div>
+        <img src="../../img/annualAwardsCeremony2017Pics/n8.jpg" class="slideImage">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">9 / 14</div>
+        <img src="../../img/annualAwardsCeremony2017Pics/n9.jpg" class="slideImage">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">10 / 14</div>
+        <img src="../../img/annualAwardsCeremony2017Pics/n10.jpg" class="slideImage">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">11 / 14</div>
+        <img src="../../img/annualAwardsCeremony2017Pics/n11.jpg" class="slideImage">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">12 / 14</div>
+        <img src="../../img/annualAwardsCeremony2017Pics/n12.jpg" class="slideImage">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">13 / 14</div>
+        <img src="../../img/annualAwardsCeremony2017Pics/n13.jpg" class="slideImage">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">14 / 14</div>
+        <img src="../../img/annualAwardsCeremony2017Pics/n14.jpg" class="slideImage">
+    </div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(0)"></span>
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+    <span class="dot" onclick="currentSlide(7)"></span>
+    <span class="dot" onclick="currentSlide(8)"></span>
+    <span class="dot" onclick="currentSlide(9)"></span>
+    <span class="dot" onclick="currentSlide(10)"></span>
+    <span class="dot" onclick="currentSlide(11)"></span>
+    <span class="dot" onclick="currentSlide(12)"></span>
+    <span class="dot" onclick="currentSlide(13)"></span>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+        <div class = "description">
+            <p>
+                <br><br>
+                The first day of our camp was a good success: 11 kids attended
+                with 4 coaches and 2 boy helpers. Very nice weather with light
+                breeze; Parents were chatting. Shannon took very nice pictures.
+                Anyway our coaches took the job seriously, the campers were
+                learning passionately, parents were chatting like having a
+                party. I was so anxious at beginning and afraid to fail. But
+                when I see the happy smile on kids's face.
+                我心头一一块石头才落了地。I missed 清who oranaized all the
+                preparation work because I was on the road trip out of town.
+                Without her help we would not have done this event.
+                Thank you!-清！Thanks to Shannon for those nice pictures.
+                I also appreciate all the parents that helped me set up the
+                banner, table and water etc. I promise parents that tomorrow
+                evening we will let parents have some fun activities as well.
+                <br><br>
+            </p>
+        </div>
+    </section>
+
+    <!-- Required JavaScript Libraries -->
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../lib/superfish/hoverIntent.js"></script>
+    <script src="../../lib/superfish/superfish.min.js"></script>
+    <script src="../../lib/morphext/morphext.min.js"></script>
+    <script src="../../lib/wow/wow.min.js"></script>
+    <script src="../../lib/stickyjs/sticky.js"></script>
+    <script src="../../lib/easing/easing.js"></script>
+
+    <!-- Template Specisifc Custom Javascript File -->
+    <script src="../../js/custom.js"></script>
+</body>
+</html>

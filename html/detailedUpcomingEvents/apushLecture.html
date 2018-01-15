@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>APUSH Lecture</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+    <meta property="og:title" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+    <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+    <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+    <link href="favicon.ico" rel="shortcut icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../lib/animate-css/animate.min.css" rel="stylesheet">
+    <!-- Stylesheet Files -->
+    <link href="../../css/navbar.css" rel="stylesheet">
+    <link href="../../css/detailedUpcomingEventDark.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/login.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+    <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script>
+      var config = {
+      apiKey: "AIzaSyAEvvk4JUpBH5dTcWStG3riLy3Q7e4cgX8",
+      authDomain: "test-2ab4f.firebaseapp.com",
+      databaseURL: "https://test-2ab4f.firebaseio.com",
+      projectId: "test-2ab4f",
+      storageBucket: "test-2ab4f.appspot.com",
+      messagingSenderId: "577570294935"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        firebase.auth().onAuthStateChanged(function(user){
+          if(user){
+              $("#log").replaceWith("<li class=\"menu-has-children\"><a href=\"#\" class=\"sf-with-ul\">"+"Welcome " + firebase.auth().currentUser.displayName+"</a><ul><li><a href=\"html/accountSettings.html\">Account Settings</a></li></ul></li><li><a onclick=\"signOut()\">Sign Out</a></li>");
+          }
+        });
+      });
+
+      function signOut(){
+        firebase.auth().signOut();
+        window.location = "../../index.html";
+      }
+    </script>
+    <script type="text/javascript">
+      function registerEvent(){
+        var user = firebase.auth().currentUser;
+        if(user){
+            var event = firebase.database().ref('users/'+user.uid);
+            event.on('value',function(snapshot){
+              if(snapshot.val().userType=='adult'){
+                if(snapshot.val().membership=='1'){
+                  window.location = "../memberRegistration.html";
+//                  firebase.database().ref('events/adult/healthFieldLecture/' + firebase.auth().currentUser.uid).set({
+//                    name: snapshot.val().firstName + " "+ snapshot.val().lastName,
+//                    email: snapshot.val().userEmail,
+//                    type: snapshot.val().userType
+//                  });
+//                  alert("Successfully Registered");
+
+                }else{
+                  window.location = "../nonmemberRegistration.html";
+                }
+              }else {
+                alert("Incorrect User Type");
+              }
+      //                alert(snapshot.val().userType);
+            });
+          }else{
+            window.location = "../noLoginRegistration.html";
+          }
+
+      //          if(user != null){
+
+      //          }else{
+      //            window.location = "../RegisterForEvent/guestRegister.html"
+      //          }
+      }
+      //        function register(user){
+      //          alert("here2");
+      //
+      //        }
+    </script>
+  </head>
+  <body>
+    <div id="preloader"></div>
+    <!--==========================
+      Header Section
+      ============================-->
+    <header id="header">
+        <script>
+            $(function(){
+                $("#includedContent").load("navbar.html");
+            });
+        </script>
+        <div id="includedContent"></div>
+    </header>
+    <!-- #header -->
+    <!--==========================
+      Hero Section
+      ============================-->
+    <section id = "title-section">
+      <div class="container wow fadeInUp">
+        <div class = "title">
+          <p>APUSH Lecture</p>
+        </div>
+    </section>
+
+    <section id = "body-section">
+        <div class = "label">
+          <p>January 20, 2018<br>
+              Calabazas Library, Community Room
+          </p>
+        </div>
+        <div class = "paragraph-center">
+          <p>
+            Speaker: Steven ____, the President of the Bay Area US History
+            Club and the champion of the JV California US History
+            competition.<br>
+            <br>
+            Location: Calabazas Library, Community Room<br>
+            <br>
+            Time: 1/20/18 (Sunday)<br>
+            4:30pm - 6:00pm<br>
+            <br>
+            Cost: Free<br>
+            There are 42 seats, distributed on a first come
+            first serve basis; current APUSH students get priority<br>
+            <br>
+            <a href = "https://docs.google.com/forms/d/e/1FAIpQLSek9gy4G3pTPqUN3Y0QVXOOfwqX-or9xnIcugkUuBLhWsaA3g/viewform?usp=sf_link" style = "color: #B7C7F1">Register Here</a>
+          </p>
+        </div>
+    </div>
+    </section>
+    <!-- Required JavaScript Libraries -->
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../lib/superfish/hoverIntent.js"></script>
+    <script src="../../lib/superfish/superfish.min.js"></script>
+    <script src="../../lib/morphext/morphext.min.js"></script>
+    <script src="../../lib/wow/wow.min.js"></script>
+    <script src="../../lib/stickyjs/sticky.js"></script>
+    <script src="../../lib/easing/easing.js"></script>
+    <!--  <script type="text/javascript" src="../../js/login.js"></script>-->
+    <!-- Template Specisifc Custom Javascript File -->
+    <script src="../../js/custom.js"></script>
+  </body>
+</html>

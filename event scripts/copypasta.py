@@ -5,7 +5,7 @@ def printStuff():
         f.write('''
 <div class="mySlides">
     <div class="numbertext">'''+ str(x+1) +''' / '''+str(total)+'''</div>
-    <img src="../../img/volleyballPics/v'''+str(x+1)+'''.jpg" class="slideImage">
+    <img src="../../img/annualAwardsCeremony2017Pics/n'''+str(x+1)+'''.jpg" class="slideImage">
 </div>\n''')
 
     for x in range(total):
