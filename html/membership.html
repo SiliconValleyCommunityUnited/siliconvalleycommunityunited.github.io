@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Membership</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -37,167 +37,167 @@
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="jquery.js"></script>
-    <script>
-        $(function(){
-          $("#includedContent").load("navbar.html");
-        });
-    </script>
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="preloader"></div>
     <!--==========================
-      Header Section
-      ============================-->
-      <header id="header">
-        <div id="includedContent"></div>
-      </header>
-    <!-- #header -->
-    <!--==========================
-      Hero Section
-      ============================-->
-    <!--    <section id = "membership">-->
-    <section id="section">
-      <div class="container wow fadeInUp">
+    Header Section
+    ============================-->
+    <header id="header">
+        <script>
+        $(function(){
+            $("#includedContent").load("navbar.html");
+        });
+    </script>
+    <div id="includedContent"></div>
+</header>
+<!-- #header -->
+<!--==========================
+Hero Section
+============================-->
+<!--    <section id = "membership">-->
+<section id="section">
+    <div class="container wow fadeInUp">
         <div class="row">
-          <div class="col-md-12">
-            <h3 class="section-title">Membership</h3>
-            <div class="section-title-divider"></div>
-            <p class="section-description">Joining our membership allows you to attend events[add stuff]</p>
-          </div>
+            <div class="col-md-12">
+                <h3 class="section-title">Membership</h3>
+                <div class="section-title-divider"></div>
+                <p class="section-description">Joining our membership allows you to attend events[add stuff]</p>
+            </div>
         </div>
-      </div>
-
-      <div class="columns">
-  <ul class="price">
-    <li class="header">Basic</li>
-    <li class="grey">Free</li>
-    <li>10GB Storage</li>
-    <li>10 Emails</li>
-    <li>10 Domains</li>
-    <li>1GB Bandwidth</li>
-    <li class="grey"></li>
-  </ul>
-</div>
-     <div class="columns" align="center">
-  <ul class="price">
-    <li class="header">Membership</li>
-    <li class="grey">$100 / year</li>
-    <li>asdf</li>
-    <li>Discounted Events</li>
-    <li>10 Domains</li>
-    <li>1GB Bandwidth</li>
-    <li class="grey"><div id="paypal-button-container"></div></li>
-  </ul>
-</div>
-
-
-
-<!--
-      <div id="pricing-table" class="clear" align="center">
-        <div class="plan2">
-          <h3>Non-Member<span>Free</span></h3>
-                  <a class="signup" href="">Sign up</a>
-          <ul>
-            <li><b>10GB</b> asdf</li>
-            <li><b>100GB</b> asdf</li>
-            <li><b>20</b> Easdf</li>
-            <li><b>13</b> asdf</li>
-          </ul>
-        </div>
-        <div class="plan" id="most-popular">
-          <h3>Member<span>$50</span></h3>
--->
-          <!--        <a class="signup" href="">Sign up</a>        -->
-
-<!--
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-            <input type="hidden" name="cmd" value="_xclick-subscriptions">
-            <input type="hidden" name="business" value="svcu.info@gmail.com">
-            <input type="hidden" name="lc" value="US">
-            <input type="hidden" name="item_name" value="SVCU Yearly Membership">
-            <input type="hidden" name="no_note" value="1">
-            <input type="hidden" name="src" value="1">
-            <input type="hidden" name="a3" value="50.00">
-            <input type="hidden" name="p3" value="1">
-            <input type="hidden" name="t3" value="Y">
-            <input type="hidden" name="currency_code" value="USD">
-            <input type="hidden" name="bn" value="PP-SubscriptionsBF:btn_subscribeCC_LG.gif:NonHostedGuest">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-          </form>
--->
-<!--
-          <ul>
-            <li><b>3</b> Free Events</li>
-            <li>Discounted Events</li>
-            <li><b>10</b> asdf</li>
-            <li><b>12</b> asdf</li>
-          </ul>
-        </div>
-      </div>
--->
-    </section>
-    <!--       /////////////////////////////////-->
-    <div class = "paragraph">
-<!--      <div id="paypal-button-container"></div>-->
-      <script>
-
-        paypal.Button.render({
-
-            env: 'sandbox', // sandbox | production
-
-            // PayPal Client IDs - replace with your own
-            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
-            client: {
-                sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
-                production: '<insert production client id>'
-            },
-
-            // Show the buyer a 'Pay Now' button in the checkout flow
-            commit: true,
-
-            // payment() is called when the button is clicked
-            payment: function(data, actions) {
-                // Make a call to the REST api to create the payment
-                return actions.payment.create({
-                    payment: {
-                        transactions: [
-                            {
-                                amount: { total: '10.01', currency: 'USD' }
-                            }
-                        ]
-                    }
-                });
-            },
-
-            // onAuthorize() is called when the buyer approves the payment
-            onAuthorize: function(data, actions) {
-                requestMembership();
-                // Make a call to the REST api to execute the payment
-                return actions.payment.execute().then(function() {
-//                    requestMembership();
-                    window.alert('Payment Complete!');
-
-                });
-//              requestMembership();
-            }
-
-        }, '#paypal-button-container');
-
-      </script>
     </div>
-    <!-- Required JavaScript Libraries -->
-    <script src="../lib/jquery/jquery.min.js"></script>
-    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../lib/superfish/hoverIntent.js"></script>
-    <script src="../lib/superfish/superfish.min.js"></script>
-    <script src="../lib/morphext/morphext.min.js"></script>
-    <script src="../lib/wow/wow.min.js"></script>
-    <script src="../lib/stickyjs/sticky.js"></script>
-    <script src="../lib/easing/easing.js"></script>
 
-    <!-- Template Specisifc Custom Javascript File -->
-    <script src="../js/custom.js"></script>
-  </body>
+    <div class="columns">
+        <ul class="price">
+            <li class="header">Basic</li>
+            <li class="grey">Free</li>
+            <li>10GB Storage</li>
+            <li>10 Emails</li>
+            <li>10 Domains</li>
+            <li>1GB Bandwidth</li>
+            <li class="grey"></li>
+        </ul>
+    </div>
+    <div class="columns" align="center">
+        <ul class="price">
+            <li class="header">Membership</li>
+            <li class="grey">$100 / year</li>
+            <li>asdf</li>
+            <li>Discounted Events</li>
+            <li>10 Domains</li>
+            <li>1GB Bandwidth</li>
+            <li class="grey"><div id="paypal-button-container"></div></li>
+        </ul>
+    </div>
+
+
+
+    <!--
+    <div id="pricing-table" class="clear" align="center">
+    <div class="plan2">
+    <h3>Non-Member<span>Free</span></h3>
+    <a class="signup" href="">Sign up</a>
+    <ul>
+    <li><b>10GB</b> asdf</li>
+    <li><b>100GB</b> asdf</li>
+    <li><b>20</b> Easdf</li>
+    <li><b>13</b> asdf</li>
+</ul>
+</div>
+<div class="plan" id="most-popular">
+<h3>Member<span>$50</span></h3>
+-->
+<!--        <a class="signup" href="">Sign up</a>        -->
+
+<!--
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_xclick-subscriptions">
+<input type="hidden" name="business" value="svcu.info@gmail.com">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="item_name" value="SVCU Yearly Membership">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="src" value="1">
+<input type="hidden" name="a3" value="50.00">
+<input type="hidden" name="p3" value="1">
+<input type="hidden" name="t3" value="Y">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="bn" value="PP-SubscriptionsBF:btn_subscribeCC_LG.gif:NonHostedGuest">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+-->
+<!--
+<ul>
+<li><b>3</b> Free Events</li>
+<li>Discounted Events</li>
+<li><b>10</b> asdf</li>
+<li><b>12</b> asdf</li>
+</ul>
+</div>
+</div>
+-->
+</section>
+<!--       /////////////////////////////////-->
+<div class = "paragraph">
+    <!--      <div id="paypal-button-container"></div>-->
+    <script>
+
+    paypal.Button.render({
+
+        env: 'sandbox', // sandbox | production
+
+        // PayPal Client IDs - replace with your own
+        // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+        client: {
+            sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
+            production: '<insert production client id>'
+        },
+
+        // Show the buyer a 'Pay Now' button in the checkout flow
+        commit: true,
+
+        // payment() is called when the button is clicked
+        payment: function(data, actions) {
+            // Make a call to the REST api to create the payment
+            return actions.payment.create({
+                payment: {
+                    transactions: [
+                        {
+                            amount: { total: '10.01', currency: 'USD' }
+                        }
+                    ]
+                }
+            });
+        },
+
+        // onAuthorize() is called when the buyer approves the payment
+        onAuthorize: function(data, actions) {
+            requestMembership();
+            // Make a call to the REST api to execute the payment
+            return actions.payment.execute().then(function() {
+                //                    requestMembership();
+                window.alert('Payment Complete!');
+
+            });
+            //              requestMembership();
+        }
+
+    }, '#paypal-button-container');
+
+</script>
+</div>
+<!-- Required JavaScript Libraries -->
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../lib/superfish/hoverIntent.js"></script>
+<script src="../lib/superfish/superfish.min.js"></script>
+<script src="../lib/morphext/morphext.min.js"></script>
+<script src="../lib/wow/wow.min.js"></script>
+<script src="../lib/stickyjs/sticky.js"></script>
+<script src="../lib/easing/easing.js"></script>
+
+<!-- Template Specisifc Custom Javascript File -->
+<script src="../js/custom.js"></script>
+</body>
 </html>

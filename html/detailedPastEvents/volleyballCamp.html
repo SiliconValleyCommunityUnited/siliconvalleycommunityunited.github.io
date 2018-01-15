@@ -45,7 +45,12 @@
           firebase.auth().signOut();
           window.location = "../../index.html";
         }
-      </script>
+     </script>
+     <script>
+         $(function(){
+           $("#includedContent").load("navbar.html");
+         });
+     </script>
 </head>
 
 <body>
@@ -55,12 +60,7 @@
     Header Section
     ============================-->
     <header id="header">
-        <script src="jquery.js"></script>
-        <script>
-            $(function(){
-                $("#includedContent").load("../navbar.html"); 
-            });
-        </script>
+        <div id="includedContent"></div>
     </header><!-- #header -->
 
     <!--==========================
