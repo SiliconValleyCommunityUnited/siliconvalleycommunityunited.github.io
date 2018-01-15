@@ -46,11 +46,6 @@
           window.location = "../../index.html";
         }
      </script>
-     <script>
-         $(function(){
-           $("#includedContent").load("navbar.html");
-         });
-     </script>
 </head>
 
 <body>
@@ -60,6 +55,11 @@
     Header Section
     ============================-->
     <header id="header">
+        <script>
+            $(function(){
+                $("#includedContent").load("navbar.html");
+            });
+        </script>
         <div id="includedContent"></div>
     </header><!-- #header -->
 
