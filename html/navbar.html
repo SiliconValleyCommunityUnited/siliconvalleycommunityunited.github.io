@@ -41,3 +41,10 @@
         </ul>
     </nav><!-- #nav-menu-container -->
 </div>
+
+<script type="text/javascript">
+  function signOut(){
+    firebase.auth().signOut();
+    window.location = "../index.html";
+  }
+</script>

@@ -59,48 +59,48 @@
             $("#expiredUsers").append("<tr>"+"<td>"+childSnapshot.val().firstName + "</td>"+"<td>"+childSnapshot.val().lastName + "</td>"+"<td>"+childSnapshot.val().userEmail + "</td>"+"<td>"+childSnapshot.val().userType +"</td>"+"<td>"+childSnapshot.key +"</td>"+"<td>"+childSnapshot.val().endDate + "</td>"+"</tr>");
           }
         });
-      });   
+      });
     }
-    
+
     var getEvents = firebase.database().ref('users/');
     getEvents.once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot){
         $("#allUsers").append("<tr>"+"<td>"+childSnapshot.val().firstName + "</td>"+"<td>"+childSnapshot.val().lastName + "</td>"+"<td>"+childSnapshot.val().userEmail + "</td>"+"<td>"+childSnapshot.val().userType +"</td>"+"<td>"+childSnapshot.key +"</td>"+"<td>"+childSnapshot.val().endDate + "</td>"+"</tr>");
-        
+
       });
     });
     var getEvents = firebase.database().ref('memberReq/');
     getEvents.once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot){
         $("#memberReq").append("<tr>"+"<td>"+childSnapshot.val().name + "</td>"+"<td>"+childSnapshot.val().email + "</td>"+"<td>"+childSnapshot.key +"</td>" + "</td>"+"</tr>");
-        
+
       });
-    }); 
-    
-    
-    
+    });
+
+
+
     //script for getting events
 
     var getEvents2 = firebase.database().ref('events/adult/healthFieldLecture');
     getEvents2.once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot){
-        $("#health").append("<tr>"+"<td>"+childSnapshot.val().name + "</td>"+"<td>"+childSnapshot.val().email + "</td>"+"<td>"+childSnapshot.val().type +"</td>"+"<td>"+childSnapshot.key +"</td>" + "</td>"+"</tr>");  
+        $("#health").append("<tr>"+"<td>"+childSnapshot.val().name + "</td>"+"<td>"+childSnapshot.val().email + "</td>"+"<td>"+childSnapshot.val().type +"</td>"+"<td>"+childSnapshot.key +"</td>" + "</td>"+"</tr>");
       });
     });
     var getEvents2 = firebase.database().ref('events/adult/healthFieldLecture/nonmember');
     getEvents2.once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot){
         $("#healthGuest").append("<tr>"+"<td>"+childSnapshot.val().name + "</td>"+"<td>"+childSnapshot.val().email + "</td>"+"<td>"+childSnapshot.val().type +"</td>"+"<td>"+childSnapshot.key +"</td>" + "</td>"+"</tr>");
-        
+
       });
     });
     var getEvents2 = firebase.database().ref('events/adult/healthFieldLecture/noLogin');
     getEvents2.once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot){
-        $("#healthNoLogin").append("<tr>"+"<td>"+childSnapshot.val().name + "</td>"+"<td>"+childSnapshot.val().email + "</td>"+ "</td>"+"</tr>");  
+        $("#healthNoLogin").append("<tr>"+"<td>"+childSnapshot.val().name + "</td>"+"<td>"+childSnapshot.val().email + "</td>"+ "</td>"+"</tr>");
       });
     });
-    
+
   </script>
   <script type="text/javascript">
     function signOut(){

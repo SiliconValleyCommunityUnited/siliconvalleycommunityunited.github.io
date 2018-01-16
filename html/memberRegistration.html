@@ -42,60 +42,13 @@
       Header Section
       ============================-->
     <header id="header">
-      <div class="container">
-        <div id="logo" class="pull-left">
-          <!--<a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a>-->
-          <!-- Uncomment below if you prefer to use a text image -->
-          <h1><a href="../index.html">SVCU</a></h1>
-        </div>
-        <nav id="nav-menu-container">
-          <ul class="nav-menu">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="news.html">News</a></li>
-            <li class="menu-has-children">
-              <a href="#">Events</a>
-              <ul>
-                <li><a href="upcomingEvents.html">Upcoming</a></li>
-                <li><a href="pastEvents.html">Past</a></li>
-              </ul>
-            </li>
-              <li class="menu-has-children"><a href="#">S-Youth</a>
-                <ul>
-                    <li><a href = "s-youth-about.html">About</a></li>
-                    <li><a href = "s-youth-projects.html">Projects</a></li>
-                    <li><a href = "s-youth-join.html">Join</a></li>
-                </ul>
-              </li>
-            <li class="menu-has-children">
-              <a href="#">About</a>
-              <ul>
-                <li><a href="ourStory.html">Our Story</a></li>
-                <li><a href="contactUs.html">Contact Us</a></li>
-                <li><a href="subscribe.html">Subscribe</a></li>
-              </ul>
-            </li>
-            <li class="menu-has-children">
-              <a href="#">Support</a>
-              <ul>
-                <li><a href="donate.html">Donate</a></li>
-                <li><a href="store.html">Store</a></li>
-              </ul>
-            </li>
-            <li><a href="membership.html">Membership</a></li>
-            <li id="log"><a href="Login.html">Sign in</a></li>
-          </ul>
-        </nav>
-        <!-- #nav-menu-container -->
-      </div>
+        <script>
+            $(function(){
+                $("#includedContent").load("navbar.html");
+            });
+        </script>
+        <div id="includedContent"></div>
       <script src="../js/memberRegistration.js"></script>
-      <script type="text/javascript">
-        function signOut(){
-          firebase.auth().signOut();
-          window.location = "../index.html";
-        }
-        
-      </script>
-      
     </header>
     <div class="columns" style="margin-left: 25vw;">
   <ul class="price">
@@ -110,23 +63,23 @@
     <li class="grey"><div id="paypal-button-container"></div></li>
   </ul>
     </div>
-     
+
      <script>
-        
+
         paypal.Button.render({
-        
+
             env: 'sandbox', // sandbox | production
-        
+
             // PayPal Client IDs - replace with your own
             // Create a PayPal app: https://developer.paypal.com/developer/applications/create
             client: {
                 sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
                 production: '<insert production client id>'
             },
-        
+
             // Show the buyer a 'Pay Now' button in the checkout flow
             commit: true,
-        
+
             // payment() is called when the button is clicked
             payment: function(data, actions) {
                 // Make a call to the REST api to create the payment
@@ -140,7 +93,7 @@
                     }
                 });
             },
-        
+
             // onAuthorize() is called when the buyer approves the payment
             onAuthorize: function(data, actions) {
                 requestEvent();
@@ -148,15 +101,15 @@
                 return actions.payment.execute().then(function() {
 //                    requestMembership();
                     window.alert('Payment Complete!');
-                     
+
                 });
 //              requestMembership();
             }
-        
+
         }, '#paypal-button-container');
-        
+
       </script>
-     
+
       <!-- Required JavaScript Libraries -->
     <script src="../lib/jquery/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>

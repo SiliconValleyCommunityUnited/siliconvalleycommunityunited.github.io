@@ -93,13 +93,13 @@
           firebase.auth().signOut();
           window.location = "../index.html";
         }
-        
+
       </script>
       
     </header>
     <div style="margin-left:35vw;margin-right: 35vw;margin-top: 5vh;">
       <div class="form-group row" >
-        
+
         <label for="example-text-input" class="col-2 col-form-label" style="align-content: center">Name</label>
         <div class="col-10">
           <input class="form-control" type="text" value="" id="name">
@@ -124,23 +124,23 @@
     <li class="grey"><div id="paypal-button-container"></div></li>
   </ul>
     </div>
-     
+
      <script>
-        
+
         paypal.Button.render({
-        
+
             env: 'sandbox', // sandbox | production
-        
+
             // PayPal Client IDs - replace with your own
             // Create a PayPal app: https://developer.paypal.com/developer/applications/create
             client: {
                 sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
                 production: '<insert production client id>'
             },
-        
+
             // Show the buyer a 'Pay Now' button in the checkout flow
             commit: true,
-        
+
             // payment() is called when the button is clicked
             payment: function(data, actions) {
                 // Make a call to the REST api to create the payment
@@ -154,7 +154,7 @@
                     }
                 });
             },
-        
+
             // onAuthorize() is called when the buyer approves the payment
             onAuthorize: function(data, actions) {
                 requestEvent();
@@ -162,15 +162,15 @@
                 return actions.payment.execute().then(function() {
 //                    requestMembership();
                     window.alert('Payment Complete!');
-                     
+
                 });
 //              requestMembership();
             }
-        
+
         }, '#paypal-button-container');
-        
+
       </script>
-     
+
       <!-- Required JavaScript Libraries -->
     <script src="../lib/jquery/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>

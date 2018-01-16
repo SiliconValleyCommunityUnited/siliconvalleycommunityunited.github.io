@@ -39,7 +39,7 @@
     <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
   <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
   </head>
-  
+
   <script>
     // Initialize Firebase
     var config = {
@@ -64,13 +64,13 @@
   <!-- Template Specisifc Custom Javascript File -->
   <script src="../js/custom.js"></script>
   <script src="../contactform/contactform.js"></script>
-  
+
   <script type="text/javascript">
     function toggleSignIn() {
           if (firebase.auth().currentUser) {
-            
+
             firebase.auth().signOut();
-            
+
           } else {
             var email = document.getElementById('login-name').value;
             var password = document.getElementById('login-pass').value;
@@ -97,7 +97,7 @@
               document.getElementById('quickstart-sign-in').disabled = false;
 
             });
-        
+
         }
           firebase.auth().onAuthStateChanged(function(user){
             if(user){
@@ -108,11 +108,11 @@
         }
     function initApp() {
           // Listening for auth state changes.
-          
+
           firebase.auth().onAuthStateChanged(function(user) {
-            
+
             document.getElementById('quickstart-verify-email').disabled = true;
-            
+
             if (user) {
               // User is signed in.
               var displayName = user.displayName;
@@ -122,27 +122,27 @@
               var isAnonymous = user.isAnonymous;
               var uid = user.uid;
               var providerData = user.providerData;
-              
+
               document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
               document.getElementById('quickstart-sign-in').textContent = 'Sign out';
               document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
               if (!emailVerified) {
                 document.getElementById('quickstart-verify-email').disabled = false;
               }
-              
+
             } else {
               // User is signed out.
-              
+
               document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
               document.getElementById('quickstart-sign-in').textContent = 'Sign in';
               document.getElementById('quickstart-account-details').textContent = 'null';
-              
+
             }
-            
+
             document.getElementById('quickstart-sign-in').disabled = false;
-            
+
           });
-          
+
           document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
           document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
           document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
@@ -150,11 +150,11 @@
         }
         window.onload = function() {
           initApp();
-          
+
         };
-      
+
   </script>
-  
+
 <!--
 <script>
   $(document).ready(function(){
@@ -166,8 +166,8 @@
   });
 </script>
 -->
-  
- 
+
+
   <body>
 <!--    <script type="text/javascript" src="../js/login.js"></script>-->
     <div id="preloader"></div>
@@ -175,45 +175,12 @@
       Header Section
       ============================-->
     <header id="header">
-      <div class="container">
-        <div id="logo" class="pull-left">
-          <!--<a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a>-->
-          <!-- Uncomment below if you prefer to use a text image -->
-          <h1><a href="../index.html">SVCU</a></h1>
-        </div>
-        <nav id="nav-menu-container">
-          <ul class="nav-menu">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="news.html">News</a></li>
-            <li class="menu-has-children">
-              <a href="#">Events</a>
-              <ul>
-                <li><a href="upcomingEvents.html">Upcoming</a></li>
-                <li><a href="pastEvents.html">Past</a></li>
-              </ul>
-            </li>
-            <li><a href="s-youth.html">S-Youth</a></li>
-            <li class="menu-has-children">
-              <a href="#">About</a>
-              <ul>
-                <li><a href="ourStory.html">Our Story</a></li>
-                <li><a href="contactUs.html">Contact Us</a></li>
-                <li><a href="subscribe.html">Subscribe</a></li>
-              </ul>
-            </li>
-            <li class="menu-has-children">
-              <a href="#">Support</a>
-              <ul>
-                <li><a href="donate.html">Donate</a></li>
-                <li><a href="store.html">Store</a></li>
-              </ul>
-            </li>
-            <li><a href="membership.html">Membership</a></li>
-            <li class="menu-active"><a href="Login.html">Sign in</a></li>
-          </ul>
-        </nav>
-        <!-- #nav-menu-container -->
-      </div>
+        <script>
+            $(function(){
+                $("#includedContent").load("navbar.html");
+            });
+        </script>
+        <div id="includedContent"></div>
     </header>
     <!-- #header -->
     <!--==========================
