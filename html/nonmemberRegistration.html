@@ -42,6 +42,12 @@
       Header Section
       ============================-->
     <header id="header">
+        <script>
+            $(function(){
+                $("#includedContent").load("/html/navbar.html");
+            });
+        </script>
+        <div id="includedContent"></div>
         <script type="text/javascript">
           function signOut(){
             firebase.auth().signOut();
