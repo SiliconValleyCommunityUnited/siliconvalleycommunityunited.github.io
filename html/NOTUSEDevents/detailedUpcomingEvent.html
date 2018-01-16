@@ -53,43 +53,12 @@
     Header Section
     ============================-->
     <header id="header">
-        <div class="container">
-
-            <div id="logo" class="pull-left">
-                <!--<a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a>-->
-                <!-- Uncomment below if you prefer to use a text image -->
-                <h1><a href="../index.html">SVCU</a></h1>
-            </div>
-
-            <nav id="nav-menu-container">
-                <ul class="nav-menu">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li class="menu-has-children menu-active"><a href="#">Events</a>
-                        <ul>
-                            <li class="menu-active"><a href="upcomingEvents.html">Upcoming</a></li>
-                            <li><a href="pastEvents.html">Past</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="s-youth.html">S-Youth</a></li>
-                    <li class="menu-has-children"><a href="#">About</a>
-                        <ul>
-                            <li><a href="ourStory.html">Our Story</a></li>
-                            <li><a href="contactUs.html">Contact Us</a></li>
-                            <li><a href="subscribe.html">Subscribe</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-has-children"><a href="#">Support</a>
-                        <ul>
-                            <li><a href="donate.html">Donate</a></li>
-                            <li><a href="store.html">Store</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="membership.html">Membership</a></li>
-                    <li><a href="Login.html">Sign in</a></li>
-                </ul>
-            </nav><!-- #nav-menu-container -->
-        </div>
+        <script>
+            $(function(){
+                $("#includedContent").load("/html/navbar.html");
+            });
+        </script>
+        <div id="includedContent"></div>
     </header><!-- #header -->
     <!--==========================
     Hero Section
@@ -102,7 +71,7 @@
 	<div class = "picture-1">
 		<img src="../img/healthFieldLecture.jpg" style="width:100%">
 	    </div>
-		
+
 
         <div align = "center">
 	    <h1>Date, Time, Location, Price</h1>
