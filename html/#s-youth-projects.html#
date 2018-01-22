@@ -29,7 +29,7 @@
     <link href="../lib/animate-css/animate.min.css" rel="stylesheet">
     <!-- Main Stylesheet File -->
     <link href="../css/navbar.css" rel="stylesheet">
-    <link href="../css/s-youth-projects.css" rel="stylesheet">
+    <link href="../css/aboutUs.css" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
     <script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="../js/login.js"></script>
@@ -73,8 +73,10 @@
 
             </thead>
 
+
+q
             <tbody>
-<!--                Left Image-->
+<!-- Left Image-->
                 <tr>
                     <th> <div style="background-image: url(../img/voterRegistrationPics/n3.jpg); margin-left:auto; margin-right:0px; height: 42vw; width: 42vw; background-size: cover ">
                         </div>
