@@ -45,6 +45,14 @@
     Author URL: https://bootstrapmade.com
     ======================================================= -->
 </head>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+  function signOut(){
+    firebase.auth().signOut();
+    window.location = "index.html";
+  }
+</script>
+
 
 <body>
     <div id="preloader"></div>
@@ -59,7 +67,7 @@
             });
         </script>
         <div id="includedContent"></div>
-    </header><!-- #header -->
+    </header>
 
     <!--==========================
     Hero Section
