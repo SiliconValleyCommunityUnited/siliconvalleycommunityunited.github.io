@@ -1,45 +1,53 @@
 /* detailed upcoming event */
 
-#detailed-upcoming-event {
+#title-section {
+    background: url("../img/taxSeminar2018Cover.jpg") bottom center fixed;
+    background-size: cover;
+    text-align: center;
+    box-shadow: inset 0 0 0 2000px rgba(54, 92, 180, 0.3);
+    padding: 10vh 0;
+}
+
+#body-section {
     display: table;
     width: 100%;
     height: calc(100vh);
-    background-color: #DFF2F3;
+    background-color: #7481A4;
     color: black;
-    padding-top: 5vh;
 }
 
-#detailed-upcoming-event .title {
+#title-section .title {
     font-size: 7vw;
     text-align: center;
     margin: 1vw 0;
+    color: white;
 }
 
-#detailed-upcoming-event .label {
+#body-section .label {
     font-size: 3.5vw;
     font-weight: normal;
     text-align: center;
     color: inherit;
 }
 
-#detailed-upcoming-event .paragraph-center {
+#body-section .paragraph-center {
     font-size: 1.76vw;
     margin: 0.5vw 15vw;
     text-align: center;
 }
 
-#detailed-upcoming-event .buttonCenter{
+#body-section .buttonCenter{
     margin-top: 5vh;
     text-align:center;
 }
 
-#detailed-upcoming-event .centerPicture{
+#body-section .centerPicture{
     margin: 0 auto;
     width: 60vw;
     text-align:center;
 }
 
-#detailed-upcoming-event .btn-lg2,
+#body-section .btn-lg2,
 .btn-group-lg > .btn {
   padding: .9vw 1.6vw;
   font-size: 1.3vw;
@@ -47,6 +55,6 @@
   border-radius: 6px;
 }
 
-#detailed-upcoming-event .th {
+#body-section .th {
     width:50vw;
 }

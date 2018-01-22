@@ -10,14 +10,14 @@
 }
 
 #news .title {
-    font-size: 7vw;
+    font-size: 5vw;
     text-align: center;
     margin: 1vw 0;
 /*    vertical-align: text-top;*/
 }
 
 #news .label {
-    font-size: 3.5vw;
+    font-size: 3vw;
     font-weight: normal;
     text-align: center;
     color: black;

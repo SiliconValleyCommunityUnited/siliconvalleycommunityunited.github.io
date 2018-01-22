@@ -53,7 +53,7 @@
 }
 
 #first .slogan {
-    font-size: calc(7 * var(--factor));
+    font-size: calc(6 * var(--factor));
     color: white;
     display: inline-block;
     margin-top: calc(4.5 * var(--factor));
@@ -96,12 +96,12 @@
 }
 
 #who-we-are .title {
-    font-size: calc(14 * var(--factor));
+    font-size: calc(9 * var(--factor));
 }
 
 #who-we-are .paragraph {
-    font-size: calc(7 * var(--factor));
-    margin: 3vw calc(30 * var(--factor));
+    font-size: calc(5 * var(--factor));
+    margin: 2vw calc(20 * var(--factor));
 }
 
 /* what we do */
@@ -112,23 +112,29 @@
     height: 100vh;
     background-color: #425661;
     color: white;
-    padding-top: calc(5 * var(--factor));
 }
 
 #what-we-do .title {
-    font-size: 6vw;
+    font-size: calc(9 * var(--factor));
     text-align: center;
     margin: 1vw 0;
 }
 
 #what-we-do .label {
-    font-size: 5vw;
+    font-size: calc(6 * var(--factor));
     font-weight: normal;
-    text-align: center;
+    text-align: right;
+    margin: 0 2vw;
 }
 
 #what-we-do .paragraph-left {
-    font-size: 2.2vw;
-    margin: 3vw 3vw;
+    font-size: calc(4.5 * var(--factor));
+    margin: 1vw 4vw;
     text-align: left;
+}
+
+#what-we-do .paragraph-right {
+    font-size: calc(4.5 * var(--factor));
+    margin: 1vw 4vw;
+    text-align: right;
 }
